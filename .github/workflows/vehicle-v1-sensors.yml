@@ -1,0 +1,30 @@
+name: Vehicle-V1 sensors
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/vehicle-v1-sensors.yml'
+      - 'prototypes/aether_v1/model/**'
+      - 'prototypes/aether_v1/sensors/**'
+      - 'prototypes/aether_v1/validation/flight.py'
+      - 'prototypes/aether_v1/validation/requirements.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sensors-arm64:
+    runs-on: macos-15
+    timeout-minutes: 8
+    defaults:
+      run:
+        working-directory: prototypes/aether_v1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+          architecture: arm64
+      - run: python -m pip install -r validation/requirements.txt
+      - run: python -B -m unittest sensors.sensor_checks -v

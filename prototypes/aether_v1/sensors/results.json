@@ -1,0 +1,155 @@
+{
+  "mujoco": "4.0.1",
+  "cases": {
+    "rest": {
+      "samples_per_recording": 1001,
+      "channels": {
+        "accel_x": {
+          "unit": "m/s\u00b2",
+          "ideal_native_max_abs_error": 8.881784197001252e-16,
+          "noisy_measurement_rmse": 0.08262469062171045
+        },
+        "accel_y": {
+          "unit": "m/s\u00b2",
+          "ideal_native_max_abs_error": 4.440892098500626e-16,
+          "noisy_measurement_rmse": 0.07941058437937644
+        },
+        "accel_z": {
+          "unit": "m/s\u00b2",
+          "ideal_native_max_abs_error": 1.7763568394002505e-15,
+          "noisy_measurement_rmse": 0.08213871734218108
+        },
+        "gyro_x": {
+          "unit": "rad/s",
+          "ideal_native_max_abs_error": 0.0,
+          "noisy_measurement_rmse": 0.0038919625007152406
+        },
+        "gyro_y": {
+          "unit": "rad/s",
+          "ideal_native_max_abs_error": 0.0,
+          "noisy_measurement_rmse": 0.0040317380619202346
+        },
+        "gyro_z": {
+          "unit": "rad/s",
+          "ideal_native_max_abs_error": 0.0,
+          "noisy_measurement_rmse": 0.004042099949341676
+        },
+        "velocity_x": {
+          "unit": "m/s",
+          "ideal_native_max_abs_error": 0.0,
+          "noisy_measurement_rmse": 0.015466625416657812
+        },
+        "velocity_y": {
+          "unit": "m/s",
+          "ideal_native_max_abs_error": 0.0,
+          "noisy_measurement_rmse": 0.015369088519678404
+        },
+        "velocity_z": {
+          "unit": "m/s",
+          "ideal_native_max_abs_error": 0.0,
+          "noisy_measurement_rmse": 0.015336054358988927
+        }
+      }
+    },
+    "fall": {
+      "samples_per_recording": 1001,
+      "channels": {
+        "accel_x": {
+          "unit": "m/s\u00b2",
+          "ideal_native_max_abs_error": 1.7737549380126073e-15,
+          "noisy_measurement_rmse": 0.07775242463140464
+        },
+        "accel_y": {
+          "unit": "m/s\u00b2",
+          "ideal_native_max_abs_error": 1.1370305691672346e-15,
+          "noisy_measurement_rmse": 0.07864518038219957
+        },
+        "accel_z": {
+          "unit": "m/s\u00b2",
+          "ideal_native_max_abs_error": 1.787329435652778e-15,
+          "noisy_measurement_rmse": 0.08076199423455016
+        },
+        "gyro_x": {
+          "unit": "rad/s",
+          "ideal_native_max_abs_error": 1.4791141972893971e-31,
+          "noisy_measurement_rmse": 0.0039610229438419384
+        },
+        "gyro_y": {
+          "unit": "rad/s",
+          "ideal_native_max_abs_error": 1.4791141972893971e-31,
+          "noisy_measurement_rmse": 0.003994330963325765
+        },
+        "gyro_z": {
+          "unit": "rad/s",
+          "ideal_native_max_abs_error": 3.944304526105059e-31,
+          "noisy_measurement_rmse": 0.003979661039305923
+        },
+        "velocity_x": {
+          "unit": "m/s",
+          "ideal_native_max_abs_error": 3.552713678800501e-15,
+          "noisy_measurement_rmse": 0.014808334109151711
+        },
+        "velocity_y": {
+          "unit": "m/s",
+          "ideal_native_max_abs_error": 1.3322676295501878e-15,
+          "noisy_measurement_rmse": 0.015145441584444896
+        },
+        "velocity_z": {
+          "unit": "m/s",
+          "ideal_native_max_abs_error": 5.329070518200751e-15,
+          "noisy_measurement_rmse": 0.015176126561476213
+        }
+      }
+    },
+    "tumble": {
+      "samples_per_recording": 1001,
+      "channels": {
+        "accel_x": {
+          "unit": "m/s\u00b2",
+          "ideal_native_max_abs_error": 3.344546861683284e-15,
+          "noisy_measurement_rmse": 0.07933676618639939
+        },
+        "accel_y": {
+          "unit": "m/s\u00b2",
+          "ideal_native_max_abs_error": 3.927413949611491e-15,
+          "noisy_measurement_rmse": 0.07990152187258193
+        },
+        "accel_z": {
+          "unit": "m/s\u00b2",
+          "ideal_native_max_abs_error": 1.3314002678121994e-15,
+          "noisy_measurement_rmse": 0.07942227759919863
+        },
+        "gyro_x": {
+          "unit": "rad/s",
+          "ideal_native_max_abs_error": 1.887379141862766e-15,
+          "noisy_measurement_rmse": 0.003932005288656438
+        },
+        "gyro_y": {
+          "unit": "rad/s",
+          "ideal_native_max_abs_error": 1.7208456881689926e-15,
+          "noisy_measurement_rmse": 0.003977029838784038
+        },
+        "gyro_z": {
+          "unit": "rad/s",
+          "ideal_native_max_abs_error": 4.884981308350689e-15,
+          "noisy_measurement_rmse": 0.004002450249844672
+        },
+        "velocity_x": {
+          "unit": "m/s",
+          "ideal_native_max_abs_error": 2.1892210266827306e-15,
+          "noisy_measurement_rmse": 0.015192277674907129
+        },
+        "velocity_y": {
+          "unit": "m/s",
+          "ideal_native_max_abs_error": 2.886579864025407e-15,
+          "noisy_measurement_rmse": 0.014642115198721361
+        },
+        "velocity_z": {
+          "unit": "m/s",
+          "ideal_native_max_abs_error": 9.80118763926896e-16,
+          "noisy_measurement_rmse": 0.015146040851441923
+        }
+      }
+    }
+  }
+}
