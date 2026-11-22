@@ -8,9 +8,13 @@ from itertools import pairwise
 from pathlib import Path
 
 import numpy as np
-from bridge import DT_US, FIELDS, GRAVITY_M_S2, RELEASE_S, START_US, geodetic
 from pymavlink.dialects.v20 import common as mav
 from pyulog import ULog
+
+if __package__:
+    from .bridge import DT_US, FIELDS, GRAVITY_M_S2, RELEASE_S, START_US, geodetic
+else:
+    from bridge import DT_US, FIELDS, GRAVITY_M_S2, RELEASE_S, START_US, geodetic
 
 
 def read_frames(path):

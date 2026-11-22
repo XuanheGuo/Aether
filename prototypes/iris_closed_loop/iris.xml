@@ -1,0 +1,45 @@
+<mujoco model="PX4 Classic Iris parameter port">
+  <compiler angle="radian" fusestatic="false" alignfree="false"/>
+  <option timestep="0.004" gravity="0 0 -9.80665" magnetic="0.014 0.23 -0.43"
+          integrator="implicitfast"/>
+  <worldbody>
+    <geom name="floor" type="plane" size="20 20 0.1" friction="1 0.005 0.0001"/>
+    <body name="iris" pos="0 0 0.056" quat="0.7071067811865476 0 0 0.7071067811865476">
+      <freejoint name="floating_base"/>
+      <inertial pos="0 0 0" mass="1.5" diaginertia="0.029125 0.029125 0.055225"/>
+      <geom name="base_contact" type="box" size=".235 .235 .055" friction="1 0.005 0.0001"/>
+      <body name="imu_link" pos="0 0 .02">
+        <inertial pos="0 0 0" mass=".015" diaginertia="1e-5 1e-5 1e-5"/>
+        <site name="imu" size=".006"/>
+      </body>
+      <body name="rotor_0" pos=".13 -.22 .023">
+        <inertial pos="0 0 0" mass=".005" diaginertia="9.75e-7 .000273104 .000274004"/>
+        <site name="r0" size=".014"/>
+      </body>
+      <body name="rotor_1" pos="-.13 .2 .023">
+        <inertial pos="0 0 0" mass=".005" diaginertia="9.75e-7 .000273104 .000274004"/>
+        <site name="r1" size=".014"/>
+      </body>
+      <body name="rotor_2" pos=".13 .22 .023">
+        <inertial pos="0 0 0" mass=".005" diaginertia="9.75e-7 .000273104 .000274004"/>
+        <site name="r2" size=".014"/>
+      </body>
+      <body name="rotor_3" pos="-.13 -.2 .023">
+        <inertial pos="0 0 0" mass=".005" diaginertia="9.75e-7 .000273104 .000274004"/>
+        <site name="r3" size=".014"/>
+      </body>
+      <site name="truth" size=".006"/>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="motor_0" site="r0" gear="0 0 1 0 0 -.06"/>
+    <motor name="motor_1" site="r1" gear="0 0 1 0 0 -.06"/>
+    <motor name="motor_2" site="r2" gear="0 0 1 0 0 .06"/>
+    <motor name="motor_3" site="r3" gear="0 0 1 0 0 .06"/>
+  </actuator>
+  <sensor>
+    <accelerometer name="accel" site="imu"/>
+    <gyro name="gyro" site="imu"/>
+    <magnetometer name="mag" site="imu"/>
+  </sensor>
+</mujoco>

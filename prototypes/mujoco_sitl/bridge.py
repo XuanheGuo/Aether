@@ -84,6 +84,7 @@ class Transport:
         self.decoder = mav.MAVLink(None)
         self.decoder.robust_parsing = True
         self.types_seen = set()
+        self.latest = {}
 
     def record(self, direction, message, encoded, *, host_ns, valid=True):
         item = {"direction": direction, "host_ns": host_ns, "type": message.get_type(),
@@ -102,7 +103,7 @@ class Transport:
         self.sock.sendall(wire)
         self.record("tx", message, wire, host_ns=now, valid=not bad_crc)
 
-    def read_until(self, deadline):
+    def read_until(self, deadline, *, ready=None):
         while (remaining := deadline - time.monotonic()) > 0:
             if not select.select([self.sock], [], [], remaining)[0]:
                 break
@@ -113,8 +114,12 @@ class Transport:
             for message in self.decoder.parse_buffer(incoming) or []:
                 kind = message.get_type()
                 self.types_seen.add(kind)
+                if kind != "BAD_DATA":
+                    self.latest[kind] = message
                 self.record("rx", message, bytes(message.get_msgbuf()), host_ns=now,
                             valid=kind != "BAD_DATA")
+            if ready is not None and ready():
+                break
         return True
 
 
