@@ -1,0 +1,293 @@
+{
+  "freecad": "1.1.4",
+  "mujoco": "4.0.1",
+  "parameter_edit": {
+    "alias": "FinSpan",
+    "cell": "B9",
+    "before": "132 mm",
+    "after": "136 mm",
+    "changed_cells": [
+      "B9"
+    ]
+  },
+  "changed_solids": [
+    "VaneSkin1",
+    "VaneSkin2",
+    "VaneSkin3",
+    "VaneSkin4"
+  ],
+  "original_bundle_unchanged": true,
+  "original_file_sha256": {
+    "Aether-V1.FCStd": "84ca998bf1446c55ef6d7155d039cc8da2d841414c15ababdc418b0142edc4b2",
+    "aether_v1.xml": "8d3fe77c3d6e23df9084c8eb112f00aded206ed8fcf11647fb1968543313457c",
+    "assembly.json": "18efcc7891faceeab71b74a8ae8e41429421b5664061040c4db818e2df31e4b8",
+    "cad_checks.json": "987ed4e5967e02c5da815679ca30d1cb8de4c900d37f78e08429b14b4f5c22d4",
+    "meshes/Bearing1.stl": "9c596b80f0ca0deeca04c26efea63e11b868131255e6c6bb097f75fbf27a26f8",
+    "meshes/Bearing2.stl": "1ff2379305e2853be157df32a82260e01440cd9b26b5279f3d667f75adb051c8",
+    "meshes/Bearing3.stl": "6f0b369ec1281be4ad3ae03862aa77a816bc7d97be2052eb5a5c22f577d13607",
+    "meshes/Bearing4.stl": "10c947d03449e149684d8581ecadf0c4348b718cacf209d9c6f97f3c3aed9e66",
+    "meshes/Foot1.stl": "473125e603cd6802e563ecc96d998b795b7778553a1cacdeff9797b5cc9d1688",
+    "meshes/Foot2.stl": "48b06c9bc2296eece2b440fe7c91bf25ce070d4aacd69584f4bf121ddca2d44e",
+    "meshes/Foot3.stl": "3d5306773b526833f70b26c3119efc2592810d9d671e6a06b0a8d91598d3c536",
+    "meshes/Foot4.stl": "08088563c37b345b0a9c78d63f65dac7cb5a174123fe058fb2a349dac1e874b5",
+    "meshes/GimbalRing.stl": "4e6dca696cf7499b2ac391c8678c4306e1170e1d63c73da3294ef57af30219a4",
+    "meshes/InnerBearingL.stl": "de6ca9c170b096be812d1ee2b03012d18a32d3195fb01ed6d01e9e37524bfeed",
+    "meshes/InnerBearingR.stl": "6f46f8afa1031f904b8b88efdbfb82b59980e111626eeab2bd9902534b4cc65e",
+    "meshes/InnerPinL.stl": "67104b90bbbb8beae9437784bfc7f5e5bea5c64835f7405d4b4fd97c678749b5",
+    "meshes/InnerPinR.stl": "58fa7de2d3c033f03cf06c23f9a0e03aabc4ca655139596f7dc15621adb2fddd",
+    "meshes/MainShell.stl": "d5a601b843ca9984d763e89402d90484bb95b38a37534e1d1421f0f0abcd246e",
+    "meshes/NoseShell.stl": "5390f3409a35f77b278b529f1aa56b2470f35a9e49c5f38991a1c8bd8b66c045",
+    "meshes/NozzleBell.stl": "0becfa672fa60ae4c077d3044ec21170ec86e17d677e3858614a9d7067049fc8",
+    "meshes/OuterBearingL.stl": "1629dce58b1efd047bb86d0f72ae9f8e62afc47dbf13ae8bc646408a2e9c9ae2",
+    "meshes/OuterBearingR.stl": "b3b2cf28e3992a01a0a00122dc9f8b21e90fa2f751e15a9ff85cf1dbb60081ea",
+    "meshes/OuterPinL.stl": "78067d75b735b96aa4795e0cf57f0f73402906bc1947ccec5c251a9ca301e01c",
+    "meshes/OuterPinR.stl": "a43e186bb049198d33329fb9e237137285e209257def5e18d376dae40689d70b",
+    "meshes/Saddle1.stl": "cdce8a9957e0223babdf8f6c8437c5d0f78a1d3d1deb79c88a8fc58d15b97638",
+    "meshes/Saddle2.stl": "b0debe028043230a0bcae88d1d6fe2156a7f2b7e56934824b1554edb1c170518",
+    "meshes/Saddle3.stl": "3252e29663fe93c72df20b7c606db6cbbecfc0ea0814bc453297d330305e687c",
+    "meshes/Saddle4.stl": "d21e0428b6822ee3bffb9774215d6454b475e40fea0968d0794c6da269ad5fd6",
+    "meshes/ServiceCollar.stl": "8919ea36c9df0dda3ffedfa3416c44252e30f2ccd978bdb44a6bb808c7622df4",
+    "meshes/Strut1.stl": "3e2f1f355dfbd0c206c73fe75144c4452d7c135026a2c522e3db67710b969b1b",
+    "meshes/Strut2.stl": "b03be6c32c4e3b4e43a5188b161f0ae5ca9efa878d504f4fc42fe38569c2a161",
+    "meshes/Strut3.stl": "596aa315c045c463c35f561ccf7742ef6c285bcf341a9e4ebd735dd8576dad4b",
+    "meshes/Strut4.stl": "e9b92f58221f3ec0ac7b1fd4513d89d02d246a6e2591ba9baefadf5a16e9af19",
+    "meshes/TailForkL.stl": "45ea7c50e78613c0a8685fb0692fe56c1c3e2a4cb9b40e24643ab46530ae7e42",
+    "meshes/TailForkR.stl": "a90556083f36d86784916b313c6edaafd198b39c63766efdee327208b1325f4c",
+    "meshes/TailShroud.stl": "9e90b6e552c2fb061518c37f9f1de2ad8f3836dec68faafef57b9ad8551eec67",
+    "meshes/UpperCollar.stl": "cfd0eef78f3803491ceeab822d31c5ed6158acc5ff130f73de0259aa15a13420",
+    "meshes/VanePin1.stl": "9dc9463b988c8b806a922a217e48258798103338c35d049e79ebfee9f57dd620",
+    "meshes/VanePin2.stl": "cce289f18517b753672a9b864c4c05b88a87a1fb16ea674dd5f54cf5d3ec4aea",
+    "meshes/VanePin3.stl": "9dc9463b988c8b806a922a217e48258798103338c35d049e79ebfee9f57dd620",
+    "meshes/VanePin4.stl": "b2ab26341b56c8bfecf3b449b42a4cab14458d7ac41556b6e44604c4e82906d7",
+    "meshes/VaneSkin1.stl": "79046b95e008c702338229f5b1006a0e2ab6e9ed967c0ac055a0fd1e6caf253a",
+    "meshes/VaneSkin2.stl": "14b11c2d4deb8c590305e7e1e621114cab9761ea246d3baf92acf44cf991d9fc",
+    "meshes/VaneSkin3.stl": "79046b95e008c702338229f5b1006a0e2ab6e9ed967c0ac055a0fd1e6caf253a",
+    "meshes/VaneSkin4.stl": "e51e72c3ebbffe0c126b789bb1769d55025297598a5ab8fe665a3a3a3f68444a",
+    "sim_checks.json": "74195b3ff018a877048111b9adb36db04a1e428bfe063ab9a242ab7ce7c1d891"
+  },
+  "edited_cad_sha256": "bf882fa2263d794b65503acc901aa83b26b4feb2c977d95b329aba485ecdc93a",
+  "edited_mjcf_sha256": "d4a042b271de768db20b07c23aa82e6cc19ead3aab77cfd7c0fa9cf93a4d21a5",
+  "baseline": {
+    "structure": {
+      "visual_meshes": 41,
+      "hinges": 6,
+      "pose_samples": 3,
+      "max_world_bounds_error_mm": 0.12012249676384101,
+      "max_position_error_m": 4.263238524895585e-30,
+      "max_rotation_error_rad": 7.303837142919704e-16,
+      "total_concept_mass_kg": 11.4091119390522
+    },
+    "ground": {
+      "duration_s": 5.0,
+      "evaluated_final_s": 1,
+      "foot_contact_fraction": {
+        "Foot1_contact": 1.0,
+        "Foot2_contact": 1.0,
+        "Foot3_contact": 1.0,
+        "Foot4_contact": 1.0
+      },
+      "max_base_position_drift_m": 1.16446638290114e-10,
+      "max_base_height_change_m": 2.7762634158751044e-05,
+      "max_base_rotation_deg": 1.9966477612646864e-09
+    },
+    "actuator_error_limit_deg": 6,
+    "actuators": {
+      "Vane1": [
+        {
+          "start_deg": -9.74403069855755e-16,
+          "target_deg": 16.8,
+          "final_deg": 16.502598856069255,
+          "error_deg": 0.297401143930745
+        },
+        {
+          "start_deg": 16.502598856069255,
+          "target_deg": -16.8,
+          "final_deg": -16.50259885605656,
+          "error_deg": 0.2974011439434386
+        }
+      ],
+      "Vane2": [
+        {
+          "start_deg": -3.7444798846811534e-11,
+          "target_deg": 16.8,
+          "final_deg": 16.5025988560298,
+          "error_deg": 0.29740114397020295
+        },
+        {
+          "start_deg": 16.5025988560298,
+          "target_deg": -16.8,
+          "final_deg": -16.502598856116162,
+          "error_deg": 0.29740114388383815
+        }
+      ],
+      "Vane3": [
+        {
+          "start_deg": 1.1511300428918487e-15,
+          "target_deg": 16.8,
+          "final_deg": 16.502598856069252,
+          "error_deg": 0.2974011439307482
+        },
+        {
+          "start_deg": 16.502598856069252,
+          "target_deg": -16.8,
+          "final_deg": -16.50259885605656,
+          "error_deg": 0.2974011439434386
+        }
+      ],
+      "Vane4": [
+        {
+          "start_deg": 3.744497260865919e-11,
+          "target_deg": 16.8,
+          "final_deg": 16.502598856106292,
+          "error_deg": 0.29740114389371064
+        },
+        {
+          "start_deg": 16.502598856106292,
+          "target_deg": -16.8,
+          "final_deg": -16.50259885603968,
+          "error_deg": 0.29740114396032097
+        }
+      ],
+      "GimbalX": [
+        {
+          "start_deg": -2.386635723303304e-12,
+          "target_deg": 8.4,
+          "final_deg": 6.183062595722571,
+          "error_deg": 2.2169374042774295
+        },
+        {
+          "start_deg": 6.183062595722571,
+          "target_deg": -8.4,
+          "final_deg": -6.183062982249783,
+          "error_deg": 2.2169370177502175
+        }
+      ],
+      "GimbalY": [
+        {
+          "start_deg": 5.505379082081687e-08,
+          "target_deg": 10.499999999999998,
+          "final_deg": 7.731059972593399,
+          "error_deg": 2.7689400274066
+        },
+        {
+          "start_deg": 7.731059972593399,
+          "target_deg": -10.499999999999998,
+          "final_deg": -7.731059977112535,
+          "error_deg": 2.768940022887464
+        }
+      ]
+    }
+  },
+  "edited": {
+    "structure": {
+      "visual_meshes": 41,
+      "hinges": 6,
+      "pose_samples": 3,
+      "max_world_bounds_error_mm": 0.12012249676384101,
+      "max_position_error_m": 4.263238524895585e-30,
+      "max_rotation_error_rad": 7.303837142919704e-16,
+      "total_concept_mass_kg": 11.417614457556601
+    },
+    "ground": {
+      "duration_s": 5.0,
+      "evaluated_final_s": 1,
+      "foot_contact_fraction": {
+        "Foot1_contact": 1.0,
+        "Foot2_contact": 1.0,
+        "Foot3_contact": 1.0,
+        "Foot4_contact": 1.0
+      },
+      "max_base_position_drift_m": 1.1420467959262915e-10,
+      "max_base_height_change_m": 2.7762787795089955e-05,
+      "max_base_rotation_deg": 2.1028288864123106e-09
+    },
+    "actuator_error_limit_deg": 6,
+    "actuators": {
+      "Vane1": [
+        {
+          "start_deg": -1.0749479225148712e-16,
+          "target_deg": 16.8,
+          "final_deg": 16.493775843168855,
+          "error_deg": 0.3062241568311466
+        },
+        {
+          "start_deg": 16.493775843168855,
+          "target_deg": -16.8,
+          "final_deg": -16.49377584317301,
+          "error_deg": 0.3062241568269896
+        }
+      ],
+      "Vane2": [
+        {
+          "start_deg": -4.087705632306502e-11,
+          "target_deg": 16.8,
+          "final_deg": 16.49377584314419,
+          "error_deg": 0.3062241568558118
+        },
+        {
+          "start_deg": 16.49377584314419,
+          "target_deg": -16.8,
+          "final_deg": -16.49377584324095,
+          "error_deg": 0.3062241567590498
+        }
+      ],
+      "Vane3": [
+        {
+          "start_deg": 4.892725863386213e-16,
+          "target_deg": 16.8,
+          "final_deg": 16.493775843168876,
+          "error_deg": 0.30622415683112436
+        },
+        {
+          "start_deg": 16.493775843168876,
+          "target_deg": -16.8,
+          "final_deg": -16.49377584317301,
+          "error_deg": 0.3062241568269896
+        }
+      ],
+      "Vane4": [
+        {
+          "start_deg": 4.0877425157515136e-11,
+          "target_deg": 16.8,
+          "final_deg": 16.493775843226434,
+          "error_deg": 0.30622415677356585
+        },
+        {
+          "start_deg": 16.493775843226434,
+          "target_deg": -16.8,
+          "final_deg": -16.49377584315872,
+          "error_deg": 0.306224156841283
+        }
+      ],
+      "GimbalX": [
+        {
+          "start_deg": 3.860110062117892e-13,
+          "target_deg": 8.4,
+          "final_deg": 6.183062762259273,
+          "error_deg": 2.2169372377407277
+        },
+        {
+          "start_deg": 6.183062762259273,
+          "target_deg": -8.4,
+          "final_deg": -6.183063148837927,
+          "error_deg": 2.2169368511620746
+        }
+      ],
+      "GimbalY": [
+        {
+          "start_deg": 5.4774369660809736e-08,
+          "target_deg": 10.499999999999998,
+          "final_deg": 7.731060179776627,
+          "error_deg": 2.7689398202233724
+        },
+        {
+          "start_deg": 7.731060179776627,
+          "target_deg": -10.499999999999998,
+          "final_deg": -7.731060184588593,
+          "error_deg": 2.768939815411406
+        }
+      ]
+    }
+  },
+  "pass": true
+}
