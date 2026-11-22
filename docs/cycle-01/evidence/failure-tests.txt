@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-8.3.5, pluggy-1.7.0 -- /workspace/aether-gate-check/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/aether-gate-check
+configfile: pyproject.toml
+collecting ... collected 6 items
+
+tests/test_failure.py::test_cli_failure_checkpoint[integration-integration-3] PASSED [ 16%]
+tests/test_failure.py::test_cli_failure_checkpoint[reference_solver-reference_solver-200] PASSED [ 33%]
+tests/test_failure.py::test_cli_failure_checkpoint[postprocessing-postprocessing-200] PASSED [ 50%]
+tests/test_failure.py::test_cli_failure_checkpoint[trajectory-artifact_write-200] PASSED [ 66%]
+tests/test_failure.py::test_cli_failure_checkpoint[metrics-artifact_write-200] PASSED [ 83%]
+tests/test_failure.py::test_cli_failure_checkpoint[checkpoint-integration-3] PASSED [100%]
+
+============================== 6 passed in 9.67s ===============================

@@ -1,56 +1,48 @@
-# S0 gate closure evidence — 2026-11-22
+# S0 gate report — 2026-11-22
 
-**Gate S0: FAIL.** The tested implementation is commit
-`a7f142a7e55cc8f77aab5456392acd67b66de37b`; this report is a subsequent
-report-only commit. The runner records the exact ODE stage time for evaluated-stage exceptions,
-but reports null for failures outside an ODE evaluation. The requested failure time is
-therefore not guaranteed for all runtime exceptions; T14 remains FAIL. No waiver has been granted. Do not tag or start S1.
+**Gate S0: PASS for tested code commit `6be3e48d764efbdc4fcfe5376145bc052041215a`**, subject to independent review. This report-only commit follows the tested code commit; it does not change executable code. No waiver is used and no S1 work or tag is started. The result validates the generic synthetic model and the scope of the specified tests, not a real vehicle, EDF model or flight safety.
 
-## Environment and commands
+## Environment and execution
 
-A new clean Git checkout at the tested SHA had empty `git status --porcelain`.
-Linux x86_64, CPython 3.12.14, uv 0.13.9. The repository `uv.lock` pins dependency
-versions and distribution hashes. `UV_CACHE_DIR=/tmp/aether-final-cache uv sync
---locked --extra test --python 3.12.14` installed NumPy 2.3.5, SciPy 1.17.0,
-PyYAML 6.0.3, pytest 8.3.5, Ruff 0.11.13, iniconfig 2.3.1, packaging 26.3,
-and pluggy 1.7.0. Build isolation pins setuptools 80.9.0 by version, but its distribution hash is not
-locked in uv.lock; this remains a clean-build reproducibility risk.
+A new Git checkout at the tested SHA had empty `git status --porcelain`. Platform: Linux x86_64, glibc 2.41; CPython 3.12.14; uv 0.13.9. Commands:
 
-`.venv/bin/ruff check .` passed. `.venv/bin/pytest -q` passed **19 tests in 27.89 s**.
-[GitHub Actions run 44987850117](https://github.com/XuanheGuo/Aether/actions/runs/44987850117)
-succeeded for the same code SHA, including Ruff and pytest. CI currently uses pip,
-not the uv locked environment.
+```sh
+UV_CACHE_DIR=/tmp/aether-gate-check-uv uv sync --locked --extra test --python 3.12.14
+.venv/bin/ruff check .
+.venv/bin/pytest -q
+.venv/bin/pytest -v tests/test_failure.py
+.venv/bin/python scripts/t10_evidence.py
+.venv/bin/python -m aether_sil run scenarios/free_rotation.yaml --seed 7 --output <new-directory>
+```
 
-## Matrix
+Ruff passed; full pytest **24 passed in 32.64 s**; the separate fault-injection run **6 passed in 9.67 s**. The CLI command was run twice into separate directories. [GitHub Actions 44988476804](https://github.com/XuanheGuo/Aether/actions/runs/44988476804) succeeded on the tested SHA: Python 3.12.14, `uv sync --locked --extra test`, Ruff and pytest all passed.
 
-| ID | Status | Executed evidence |
+`uv.lock` pins resolved project dependencies with distribution hashes. Build isolation specifies `setuptools==80.9.0` but its distribution hash is not locked in uv.lock; CI's `pip install uv==0.13.9` also does not enforce an artifact hash. Therefore this is a version-pinned environment with hashed project distributions, **not a fully hash-reproducible build toolchain**. The run covers this platform only.
+
+## Verification matrix
+
+| ID | Status | Evidence |
 |---|---|---|
 | T01 | PASS | `test_t01_t03`: identity and +90° yaw |
-| T02 | PASS | `test_t01_t03`: antipodal rotation and attitude |
+| T02 | PASS | `test_t01_t03`: antipodal quaternion rotation |
 | T03 | PASS | `test_t01_t03`: 100 seeded vector round trips |
 | T04 | PASS | `test_t04_invalid`: mass, SPD, degenerate/NaN quaternion |
-| T05 | PASS | `test_free_and_ballistic`: 5 s, 0.01 s, 1e-10 m tolerance |
-| T06 | PASS | same test, Earth gravity, 1e-9 m tolerance |
+| T05 | PASS | `test_free_and_ballistic`: 5 s, dt 0.01, position tolerance 1e-10 m |
+| T06 | PASS | same test with gravity, position tolerance 1e-9 m |
 | T07 | PASS | `test_angular_invariants_and_rotation`: spherical analytic quaternion |
-| T08 | PASS | same test, 10 s, 0.001 s, energy and momentum at every step |
-| T09 | PASS | `test_t09_and_body_force`: instantaneous force balance |
-| T10 | PASS | frozen four-step fixture and tighter DOP853 reference below |
-| T11 | PASS | `test_trajectory_reference_and_sign`: all 101 common samples |
-| T12 | PASS | two locked-environment runs at identical clean Git SHA; trajectory bytes identical |
-| T13 | PASS | invalid shape, missing/extra keys, dt and nonfinite tests |
-| T14 | FAIL | end-to-end injected ODE-stage failure records time; other runtime failures can lack exact failure time |
+| T08 | PASS | same test, 10 s, dt 0.001, every-step energy and momentum drift |
+| T09 | PASS | `test_t09_and_body_force`: force balance |
+| T10 | PASS | frozen four-step convergence and reference cross-check below |
+| T11 | PASS | `test_trajectory_reference_and_sign`: 101 shared sample times |
+| T12 | PASS | two clean fixed-SHA seeded CLI runs produced identical trajectory hashes |
+| T13 | PASS | invalid configuration and nonfinite/time validation tests |
+| T14 | PASS | clean CLI output and six injected failure cases, details below |
 
-No tests are WAIVED. A scenario's `run_status` is not an S0 gate verdict.
+No test is FAIL, NOT RUN, or WAIVED for this code and environment. The scenario's run validation is not itself a gate verdict.
 
-## T10
+## T10 convergence
 
-`.venv/bin/python scripts/t10_evidence.py` produced the machine-readable
-[t10.json](evidence/t10.json). The fixture has constant wrench, nonspherical inertia,
-noncommuting attitude and nonzero body rate; all parameters are in the JSON. Composite
-error is L2 of position, velocity, geodesic attitude and angular rate. Reference is
-DOP853 (rtol=1e-12, atol=1e-13), checked against a tighter independent adaptive solve
-(rtol=2.3e-14, atol=2e-15, max step 0.025 s). Both solve the same ODE, so this is a
-reference convergence cross-check rather than an independent physical model.
+Machine-readable fixture, solver settings and results: [t10.json](evidence/t10.json). Error combines position, velocity, attitude geodesic and body-rate differences.
 
 | dt (s) | error | observed order |
 |---:|---:|---:|
@@ -59,26 +51,12 @@ reference convergence cross-check rather than an independent physical model.
 | 0.05 | 2.576950669289903e-7 | 3.991540054972813 |
 | 0.025 | 1.6147810101006957e-8 | 3.996254488887297 |
 
-Reference disagreement is 4.891502238579476e-13, or 3.0292e-5 of the finest
-RK4 error, below the preselected 0.01 threshold.
+A stricter DOP853 run (rtol 2.3e-14, atol 2e-15, max step 0.025 s) differed from the standard reference by 4.8915e-13, 0.00303% of the finest RK4 error, below the 1% check threshold. Both references solve the same ODE; this does not independently validate its physics.
 
-## T12 and T14
+## T12 reproducibility
 
-Two commands `.venv/bin/python -m aether_sil run scenarios/free_rotation.yaml --seed 7
---output <distinct-directory>` produced identical `trajectory.npz` SHA-256:
-`712162c95e6b51b3aa16d172a783541091af255e2a9107e1534ceb936f6a34e2`.
-Both manifests record the tested SHA, `git_dirty=false`, seed, platform and versions.
-Manifest byte hashes differ because output path and generation time differ; manifest
-byte identity is not claimed. Machine-readable manifests, hashes and checkpoint samples
-are in [reproducibility.json](evidence/reproducibility.json).
+Two runs of the fixed free-rotation scenario and seed 7 generated the same trajectory SHA-256 `712162c95e6b51b3aa16d172a783541091af255e2a9107e1534ceb936f6a34e2`. Both manifests record the tested SHA and `git_dirty=false`. Manifests have differing bytes due to generation time and output path; no manifest byte reproducibility is claimed. [Machine-readable manifests and hashes](evidence/reproducibility.json).
 
-Injected `ValueError("injected solver failure")` exited 2 and produced FAIL,
-last successful step 3 at 0.03 s, and four checkpoint samples at 0, 0.01, 0.02 and
-0.03 s. The recorded `failure_step_start_s=0.03` and `failure_time_s=0.035`
-identify the step and evaluated substage. Exceptions outside ODE evaluation can
-still produce a null failure time. Partial-checkpoint SHA-256:
-`edcd221f4963c8910b7880e8c4f3418ee9e140e7e14d1e14f2e923944a934f27`.
+## T14 fault injection
 
-The current physical model is synthetic; no EDF, control or hardware safety claim is
-made. Analytic error is explicitly `not_applicable` when a scenario has no analytic
-reference. Invariant changes under applied torque are labeled as changes, not drift.
+[Recorded pytest results](evidence/failure-tests.txt) and `tests/test_failure.py` cover integration substage, reference solver, postprocessing, trajectory write, metrics write and failed checkpoint write. They assert nonzero exit, `FAIL`, phase, exception details, last successful step and time, time semantics, and checkpoint length/state shape. The integration failure occurs at stage time about 0.035 s after successful step 3 at 0.03 s; other tested exceptions have `failure_time_s=null` with an explicit reason. The checkpoint-write case verifies its error is separately reported and the original integration error remains the raised error. Failure record writing is also best effort: if the output location becomes unwritable, the original exception is retained and the record-write error is printed, but no on-disk record can be guaranteed.
