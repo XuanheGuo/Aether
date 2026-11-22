@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="Aether V1">
+  <compiler angle="degree" meshdir="meshes" inertiafromgeom="false" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" />
+  <visual>
+    <global azimuth="134" elevation="-9" />
+    <rgba haze="0.16 0.19 0.23 1" />
+    <scale forcewidth="0.02" jointlength="0.10" />
+  </visual>
+  <default>
+    <default class="surface">
+      <geom type="mesh" group="0" contype="0" conaffinity="0" mass="0" />
+    </default>
+    <default class="contact">
+      <geom group="3" contype="2" conaffinity="1" rgba="0.8 0.2 0.2 0.25" mass="0" />
+    </default>
+  </default>
+  <asset>
+    <texture name="floor" type="2d" builtin="checker" rgb1="0.16 0.20 0.23" rgb2="0.19 0.24 0.27" width="256" height="256" />
+    <material name="deck" texture="floor" texrepeat="6 6" texuniform="true" reflectance="0.10" />
+    <mesh name="MainShell" file="MainShell.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="ServiceCollar" file="ServiceCollar.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="UpperCollar" file="UpperCollar.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="NoseShell" file="NoseShell.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Saddle1" file="Saddle1.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Bearing1" file="Bearing1.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="VanePin1" file="VanePin1.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="VaneSkin1" file="VaneSkin1.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Saddle2" file="Saddle2.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Bearing2" file="Bearing2.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="VanePin2" file="VanePin2.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="VaneSkin2" file="VaneSkin2.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Saddle3" file="Saddle3.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Bearing3" file="Bearing3.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="VanePin3" file="VanePin3.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="VaneSkin3" file="VaneSkin3.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Saddle4" file="Saddle4.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Bearing4" file="Bearing4.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="VanePin4" file="VanePin4.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="VaneSkin4" file="VaneSkin4.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="TailShroud" file="TailShroud.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="TailForkL" file="TailForkL.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="OuterBearingL" file="OuterBearingL.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="TailForkR" file="TailForkR.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="OuterBearingR" file="OuterBearingR.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="GimbalRing" file="GimbalRing.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="NozzleBell" file="NozzleBell.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="InnerPinL" file="InnerPinL.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="InnerPinR" file="InnerPinR.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="OuterPinL" file="OuterPinL.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="InnerBearingL" file="InnerBearingL.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="OuterPinR" file="OuterPinR.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="InnerBearingR" file="InnerBearingR.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Strut1" file="Strut1.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Foot1" file="Foot1.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Strut2" file="Strut2.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Foot2" file="Foot2.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Strut3" file="Strut3.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Foot3" file="Foot3.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Strut4" file="Strut4.stl" scale=".001 .001 .001" inertia="convex" />
+    <mesh name="Foot4" file="Foot4.stl" scale=".001 .001 .001" inertia="convex" />
+  </asset>
+  <worldbody>
+    <light directional="true" pos="0 -2 3" dir="0 1 -1" diffuse="0.8 0.8 0.8" />
+    <light directional="true" pos="2 2 1" dir="-1 -1 -0.3" diffuse="0.35 0.4 0.48" castshadow="false" />
+    <geom name="floor" type="plane" size="5 5 0.1" material="deck" contype="1" conaffinity="2" />
+    <body name="Vehicle">
+      <freejoint name="Base" />
+      <geom class="surface" name="MainShell" mesh="MainShell" rgba="0.82 0.86 0.9 1" />
+      <geom class="contact" name="MainShell_contact" type="cylinder" pos="0 0 0.81" quat="1 0 0 0" size="0.12 0.545" />
+      <geom class="surface" name="ServiceCollar" mesh="ServiceCollar" rgba="0.12 0.4 0.48 1" />
+      <geom class="surface" name="UpperCollar" mesh="UpperCollar" rgba="0.18 0.23 0.29 1" />
+      <geom class="surface" name="NoseShell" mesh="NoseShell" rgba="0.82 0.86 0.9 1" />
+      <geom class="contact" name="NoseShell_contact" type="box" pos="5.96686596889e-05 -1.83636060607e-05 1.54699333654" quat="1 0 0 0" size="0.11994033134 0.11996455527 0.174993336543" />
+      <geom class="surface" name="Saddle1" mesh="Saddle1" rgba="0.18 0.23 0.29 1" />
+      <geom class="surface" name="Bearing1" mesh="Bearing1" rgba="0.53 0.58 0.62 1" />
+      <body name="Vane1" pos="0.155 0 1.1152" quat="1 0 0 0">
+        <joint name="Vane1" type="hinge" axis="1 0 0" range="-24 24" damping="0.008" armature="0.00002" />
+        <geom class="surface" name="VanePin1" mesh="VanePin1" rgba="0.73 0.35 0.17 1" />
+        <geom class="surface" name="VaneSkin1" mesh="VaneSkin1" rgba="0.12 0.4 0.48 1" />
+        <geom class="contact" name="VaneSkin1_contact" type="box" pos="0.066924 -5.3290705182e-18 -0.00946760369736" quat="1 0 0 0" size="0.065076 0.00728017215487 0.0715525732903" />
+        <inertial pos="0.0490186407348 -1.43345450607e-18 -0.0146877379035" mass="0.0760920139038" fullinertia="7.70076053444e-05 0.000161943255367 8.64674668151e-05 -1.04296578614e-21 3.16697570782e-05 -2.89574957957e-21" />
+      </body>
+      <geom class="surface" name="Saddle2" mesh="Saddle2" rgba="0.18 0.23 0.29 1" />
+      <geom class="surface" name="Bearing2" mesh="Bearing2" rgba="0.53 0.58 0.62 1" />
+      <body name="Vane2" pos="7.77156117238e-18 0.155 1.1152" quat="0.707106781187 0 0 0.707106781187">
+        <joint name="Vane2" type="hinge" axis="1 0 0" range="-24 24" damping="0.008" armature="0.00002" />
+        <geom class="surface" name="VanePin2" mesh="VanePin2" rgba="0.73 0.35 0.17 1" />
+        <geom class="surface" name="VaneSkin2" mesh="VaneSkin2" rgba="0.12 0.4 0.48 1" />
+        <geom class="contact" name="VaneSkin2_contact" type="box" pos="0.066924 -3.97097691981e-18 -0.00946760369736" quat="1 0 0 1.01465363576e-17" size="0.065076 0.00728017215487 0.0715525732903" />
+        <inertial pos="0.0490186407348 -6.08694698731e-19 -0.0146877379035" mass="0.0760920139038" fullinertia="7.70076053444e-05 0.000161943255367 8.64674668151e-05 -2.46714326221e-21 3.16697570782e-05 -2.44669233103e-21" />
+      </body>
+      <geom class="surface" name="Saddle3" mesh="Saddle3" rgba="0.18 0.23 0.29 1" />
+      <geom class="surface" name="Bearing3" mesh="Bearing3" rgba="0.53 0.58 0.62 1" />
+      <body name="Vane3" pos="-0.155 4.28626379702e-18 1.1152" quat="6.12323399574e-17 0 0 1">
+        <joint name="Vane3" type="hinge" axis="1 0 0" range="-24 24" damping="0.008" armature="0.00002" />
+        <geom class="surface" name="VanePin3" mesh="VanePin3" rgba="0.73 0.35 0.17 1" />
+        <geom class="surface" name="VaneSkin3" mesh="VaneSkin3" rgba="0.12 0.4 0.48 1" />
+        <geom class="contact" name="VaneSkin3_contact" type="box" pos="0.066924 -5.3290705182e-18 -0.00946760369736" quat="1 0 0 0" size="0.065076 0.00728017215487 0.0715525732903" />
+        <inertial pos="0.0490186407348 -1.43345450607e-18 -0.0146877379035" mass="0.0760920139038" fullinertia="7.70076053444e-05 0.000161943255367 8.64674668151e-05 -1.04296578614e-21 3.16697570782e-05 -2.89574957957e-21" />
+      </body>
+      <geom class="surface" name="Saddle4" mesh="Saddle4" rgba="0.18 0.23 0.29 1" />
+      <geom class="surface" name="Bearing4" mesh="Bearing4" rgba="0.53 0.58 0.62 1" />
+      <body name="Vane4" pos="-7.77156117238e-18 -0.155 1.1152" quat="-0.707106781187 0 0 0.707106781187">
+        <joint name="Vane4" type="hinge" axis="1 0 0" range="-24 24" damping="0.008" armature="0.00002" />
+        <geom class="surface" name="VanePin4" mesh="VanePin4" rgba="0.73 0.35 0.17 1" />
+        <geom class="surface" name="VaneSkin4" mesh="VaneSkin4" rgba="0.12 0.4 0.48 1" />
+        <geom class="contact" name="VaneSkin4_contact" type="box" pos="0.066924 -6.68716411659e-18 -0.00946760369736" quat="1 0 0 -1.01465363576e-17" size="0.065076 0.00728017215487 0.0715525732903" />
+        <inertial pos="0.0490186407348 -2.21585728913e-18 -0.0146877379035" mass="0.0760920139038" fullinertia="7.70076053444e-05 0.000161943255367 8.64674668151e-05 1.38041064051e-21 3.16697570782e-05 -3.78419280323e-21" />
+      </body>
+      <geom class="surface" name="TailShroud" mesh="TailShroud" rgba="0.18 0.23 0.29 1" />
+      <geom class="surface" name="TailForkL" mesh="TailForkL" rgba="0.18 0.23 0.29 1" />
+      <geom class="surface" name="OuterBearingL" mesh="OuterBearingL" rgba="0.53 0.58 0.62 1" />
+      <geom class="surface" name="TailForkR" mesh="TailForkR" rgba="0.18 0.23 0.29 1" />
+      <geom class="surface" name="OuterBearingR" mesh="OuterBearingR" rgba="0.53 0.58 0.62 1" />
+      <body name="GimbalX" pos="0 0 0.109" quat="1 0 0 0">
+        <joint name="GimbalX" type="hinge" axis="1 0 0" range="-12 12" damping="0.008" armature="0.00002" />
+        <geom class="surface" name="GimbalRing" mesh="GimbalRing" rgba="0.12 0.4 0.48 1" />
+        <body name="GimbalY" pos="0 0 0" quat="1 0 0 0">
+          <joint name="GimbalY" type="hinge" axis="0 1 0" range="-15 15" damping="0.008" armature="0.00002" />
+          <geom class="surface" name="NozzleBell" mesh="NozzleBell" rgba="0.53 0.58 0.62 1" />
+          <geom class="surface" name="InnerPinL" mesh="InnerPinL" rgba="0.73 0.35 0.17 1" />
+          <geom class="surface" name="InnerPinR" mesh="InnerPinR" rgba="0.73 0.35 0.17 1" />
+          <inertial pos="1.35511951344e-18 2.03280936996e-18 -0.0402311850286" mass="0.546152059819" fullinertia="0.000942858971225 0.000877379006874 0.000952969775952 2.18025036834e-20 -2.26038391035e-20 8.80914265144e-20" />
+        </body>
+        <geom class="surface" name="OuterPinL" mesh="OuterPinL" rgba="0.73 0.35 0.17 1" />
+        <geom class="surface" name="InnerBearingL" mesh="InnerBearingL" rgba="0.53 0.58 0.62 1" />
+        <geom class="surface" name="OuterPinR" mesh="OuterPinR" rgba="0.73 0.35 0.17 1" />
+        <geom class="surface" name="InnerBearingR" mesh="InnerBearingR" rgba="0.53 0.58 0.62 1" />
+        <inertial pos="-3.21389607873e-17 3.80129822521e-18 -2.76150251791e-19" mass="0.189841712818" fullinertia="0.000511051997257 0.000598371754838 0.00109952579254 -5.49116789668e-20 1.4699667177e-20 -9.07014485916e-22" />
+      </body>
+      <geom class="surface" name="Strut1" mesh="Strut1" rgba="0.18 0.23 0.29 1" />
+      <geom class="surface" name="Foot1" mesh="Foot1" rgba="0.12 0.4 0.48 1" />
+      <geom class="contact" name="Foot1_contact" type="box" pos="0.149915807374 0.14990613443 0.006" quat="0.923879532511 0 0 0.382683432365" size="0.025993871802 0.0189906541526 0.006" />
+      <geom class="surface" name="Strut2" mesh="Strut2" rgba="0.18 0.23 0.29 1" />
+      <geom class="surface" name="Foot2" mesh="Foot2" rgba="0.12 0.4 0.48 1" />
+      <geom class="contact" name="Foot2_contact" type="box" pos="-0.14990613443 0.149915807374 0.006" quat="0.382683432365 0 0 0.923879532511" size="0.025993871802 0.0189906541526 0.006" />
+      <geom class="surface" name="Strut3" mesh="Strut3" rgba="0.18 0.23 0.29 1" />
+      <geom class="surface" name="Foot3" mesh="Foot3" rgba="0.12 0.4 0.48 1" />
+      <geom class="contact" name="Foot3_contact" type="box" pos="-0.149915807374 -0.14990613443 0.006" quat="-0.382683432365 0 0 0.923879532511" size="0.025993871802 0.0189906541526 0.006" />
+      <geom class="surface" name="Strut4" mesh="Strut4" rgba="0.18 0.23 0.29 1" />
+      <geom class="surface" name="Foot4" mesh="Foot4" rgba="0.12 0.4 0.48 1" />
+      <geom class="contact" name="Foot4_contact" type="box" pos="0.14990613443 -0.149915807374 0.006" quat="-0.923879532511 0 0 0.382683432365" size="0.025993871802 0.0189906541526 0.006" />
+      <inertial pos="3.5358121631e-08 -2.72461613682e-13 0.777573422262" mass="10.3687501108" fullinertia="2.28880362061 2.28983797225 0.139348034898 1.40002321802e-13 2.1162940696e-07 -1.09035783874e-12" />
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="Vane1_target" joint="Vane1" kp="0.6" kv="0.018" ctrlrange="-0.418879020479 0.418879020479" forcerange="-0.25 0.25" />
+    <position name="Vane2_target" joint="Vane2" kp="0.6" kv="0.018" ctrlrange="-0.418879020479 0.418879020479" forcerange="-0.25 0.25" />
+    <position name="Vane3_target" joint="Vane3" kp="0.6" kv="0.018" ctrlrange="-0.418879020479 0.418879020479" forcerange="-0.25 0.25" />
+    <position name="Vane4_target" joint="Vane4" kp="0.6" kv="0.018" ctrlrange="-0.418879020479 0.418879020479" forcerange="-0.25 0.25" />
+    <position name="GimbalX_target" joint="GimbalX" kp="0.6" kv="0.018" ctrlrange="-0.209439510239 0.209439510239" forcerange="-0.25 0.25" />
+    <position name="GimbalY_target" joint="GimbalY" kp="0.6" kv="0.018" ctrlrange="-0.261799387799 0.261799387799" forcerange="-0.25 0.25" />
+  </actuator>
+</mujoco>

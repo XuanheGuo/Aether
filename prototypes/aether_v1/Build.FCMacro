@@ -1,0 +1,9 @@
+"""Run this macro in FreeCAD to create a fresh CAD and MuJoCo bundle."""
+import sys
+from pathlib import Path
+
+folder = Path(__file__).resolve().parent
+sys.path.insert(0, str(folder))
+from build_cad import main
+
+main(folder / "model")

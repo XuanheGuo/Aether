@@ -1,0 +1,319 @@
+{
+  "joints": {
+    "Vane1": {
+      "parent": "Vehicle",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "parent_position_mm": [
+        155.0,
+        0.0,
+        1115.2
+      ],
+      "parent_quaternion_wxyz": "1 0 0 0",
+      "range_degrees": [
+        -24.0,
+        24.0
+      ]
+    },
+    "Vane2": {
+      "parent": "Vehicle",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "parent_position_mm": [
+        7.771561172376096e-15,
+        155.0,
+        1115.2
+      ],
+      "parent_quaternion_wxyz": "0.707106781187 0 0 0.707106781187",
+      "range_degrees": [
+        -24.0,
+        24.0
+      ]
+    },
+    "Vane3": {
+      "parent": "Vehicle",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "parent_position_mm": [
+        -155.0,
+        4.2862637970157365e-15,
+        1115.2
+      ],
+      "parent_quaternion_wxyz": "6.12323399574e-17 0 0 1",
+      "range_degrees": [
+        -24.0,
+        24.0
+      ]
+    },
+    "Vane4": {
+      "parent": "Vehicle",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "parent_position_mm": [
+        -7.771561172376096e-15,
+        -155.0,
+        1115.2
+      ],
+      "parent_quaternion_wxyz": "-0.707106781187 0 0 0.707106781187",
+      "range_degrees": [
+        -24.0,
+        24.0
+      ]
+    },
+    "GimbalX": {
+      "parent": "Vehicle",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "parent_position_mm": [
+        0.0,
+        0.0,
+        109.0
+      ],
+      "parent_quaternion_wxyz": "1 0 0 0",
+      "range_degrees": [
+        -12.0,
+        12.0
+      ]
+    },
+    "GimbalY": {
+      "parent": "GimbalX",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "parent_position_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent_quaternion_wxyz": "1 0 0 0",
+      "range_degrees": [
+        -15.0,
+        15.0
+      ]
+    }
+  },
+  "parts": {
+    "MainShell": {
+      "body": "Vehicle",
+      "volume_mm3": 4023594.791,
+      "mesh_facets": 776
+    },
+    "ServiceCollar": {
+      "body": "Vehicle",
+      "volume_mm3": 91953.789,
+      "mesh_facets": 776
+    },
+    "UpperCollar": {
+      "body": "Vehicle",
+      "volume_mm3": 59769.963,
+      "mesh_facets": 776
+    },
+    "NoseShell": {
+      "body": "Vehicle",
+      "volume_mm3": 10555836.04,
+      "mesh_facets": 10740
+    },
+    "Saddle1": {
+      "body": "Vehicle",
+      "volume_mm3": 107209.988,
+      "mesh_facets": 2088
+    },
+    "Bearing1": {
+      "body": "Vehicle",
+      "volume_mm3": 2895.292,
+      "mesh_facets": 776
+    },
+    "VanePin1": {
+      "body": "Vane1",
+      "volume_mm3": 2001.195,
+      "mesh_facets": 384
+    },
+    "VaneSkin1": {
+      "body": "Vane1",
+      "volume_mm3": 130905.164,
+      "mesh_facets": 8668
+    },
+    "Saddle2": {
+      "body": "Vehicle",
+      "volume_mm3": 107209.988,
+      "mesh_facets": 2088
+    },
+    "Bearing2": {
+      "body": "Vehicle",
+      "volume_mm3": 2895.292,
+      "mesh_facets": 776
+    },
+    "VanePin2": {
+      "body": "Vane2",
+      "volume_mm3": 2001.195,
+      "mesh_facets": 384
+    },
+    "VaneSkin2": {
+      "body": "Vane2",
+      "volume_mm3": 130905.164,
+      "mesh_facets": 8668
+    },
+    "Saddle3": {
+      "body": "Vehicle",
+      "volume_mm3": 107209.988,
+      "mesh_facets": 2088
+    },
+    "Bearing3": {
+      "body": "Vehicle",
+      "volume_mm3": 2895.292,
+      "mesh_facets": 776
+    },
+    "VanePin3": {
+      "body": "Vane3",
+      "volume_mm3": 2001.195,
+      "mesh_facets": 384
+    },
+    "VaneSkin3": {
+      "body": "Vane3",
+      "volume_mm3": 130905.164,
+      "mesh_facets": 8668
+    },
+    "Saddle4": {
+      "body": "Vehicle",
+      "volume_mm3": 107209.988,
+      "mesh_facets": 2088
+    },
+    "Bearing4": {
+      "body": "Vehicle",
+      "volume_mm3": 2895.292,
+      "mesh_facets": 776
+    },
+    "VanePin4": {
+      "body": "Vane4",
+      "volume_mm3": 2001.195,
+      "mesh_facets": 384
+    },
+    "VaneSkin4": {
+      "body": "Vane4",
+      "volume_mm3": 130905.164,
+      "mesh_facets": 8668
+    },
+    "TailShroud": {
+      "body": "Vehicle",
+      "volume_mm3": 1070976.122,
+      "mesh_facets": 3374
+    },
+    "TailForkL": {
+      "body": "Vehicle",
+      "volume_mm3": 27205.241,
+      "mesh_facets": 4188
+    },
+    "OuterBearingL": {
+      "body": "Vehicle",
+      "volume_mm3": 4632.467,
+      "mesh_facets": 776
+    },
+    "TailForkR": {
+      "body": "Vehicle",
+      "volume_mm3": 27205.241,
+      "mesh_facets": 4260
+    },
+    "OuterBearingR": {
+      "body": "Vehicle",
+      "volume_mm3": 4632.467,
+      "mesh_facets": 776
+    },
+    "GimbalRing": {
+      "body": "GimbalX",
+      "volume_mm3": 88448.4,
+      "mesh_facets": 1552
+    },
+    "NozzleBell": {
+      "body": "GimbalY",
+      "volume_mm3": 238534.847,
+      "mesh_facets": 4382
+    },
+    "InnerPinL": {
+      "body": "GimbalY",
+      "volume_mm3": 3958.407,
+      "mesh_facets": 384
+    },
+    "InnerPinR": {
+      "body": "GimbalY",
+      "volume_mm3": 3958.407,
+      "mesh_facets": 384
+    },
+    "OuterPinL": {
+      "body": "GimbalX",
+      "volume_mm3": 3078.761,
+      "mesh_facets": 384
+    },
+    "InnerBearingL": {
+      "body": "GimbalX",
+      "volume_mm3": 1775.345,
+      "mesh_facets": 776
+    },
+    "OuterPinR": {
+      "body": "GimbalX",
+      "volume_mm3": 3078.761,
+      "mesh_facets": 384
+    },
+    "InnerBearingR": {
+      "body": "GimbalX",
+      "volume_mm3": 1775.345,
+      "mesh_facets": 776
+    },
+    "Strut1": {
+      "body": "Vehicle",
+      "volume_mm3": 211100.694,
+      "mesh_facets": 12560
+    },
+    "Foot1": {
+      "body": "Vehicle",
+      "volume_mm3": 15014.718,
+      "mesh_facets": 720
+    },
+    "Strut2": {
+      "body": "Vehicle",
+      "volume_mm3": 211100.694,
+      "mesh_facets": 12628
+    },
+    "Foot2": {
+      "body": "Vehicle",
+      "volume_mm3": 15014.718,
+      "mesh_facets": 720
+    },
+    "Strut3": {
+      "body": "Vehicle",
+      "volume_mm3": 211100.694,
+      "mesh_facets": 12518
+    },
+    "Foot3": {
+      "body": "Vehicle",
+      "volume_mm3": 15014.718,
+      "mesh_facets": 720
+    },
+    "Strut4": {
+      "body": "Vehicle",
+      "volume_mm3": 211100.694,
+      "mesh_facets": 12632
+    },
+    "Foot4": {
+      "body": "Vehicle",
+      "volume_mm3": 15014.718,
+      "mesh_facets": 720
+    }
+  }
+}
