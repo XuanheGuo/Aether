@@ -33,7 +33,7 @@ python analyze_ulog.py runs/quadx/flight.ulg --output runs/quadx-analysis
 
 v1.17 的 SIH 使用标准 `px4_sitl` 构建目标。构建前关闭可选的 Gazebo Protobuf 探测，避免本机新版 Protobuf 的 C++17 要求与该旧组件的 C++14 构建冲突。CMake 4 的最小策略版本兼容设置解决旧子项目的配置要求。PX4 上游源码未修改。官方交互等价入口为 `make px4_sitl sihsim_quadx`，构建时同样传入上述选项。 [上游 SIH 目标定义](https://github.com/PX4/PX4-Autopilot/blob/v1.17.0/src/modules/simulation/simulator_sih/CMakeLists.txt)
 
-脚本为每次运行创建干净的仿真根目录，等待 PX4 原生起飞前检查和位置、速度有效性标志，再通过 `pxh` 发出 `commander takeoff`。PX4 自动进入 Hold，脚本保持约五秒后发出 `commander land`。确认落地并自动解除解锁后停止 logger，执行 `shutdown` 并检查退出码。唯一主动设置的 PX4 参数是 `SDLOG_MODE=2`，用于把地面和飞行阶段写入同一份原生日志。SIH 以 250 Hz 和默认 1×速度运行。 [PX4 日志文档](https://docs.px4.io/v1.17/en/dev_log/logging) · [PX4 PyULog](https://github.com/PX4/pyulog)
+脚本为每次运行创建干净的仿真根目录，等待 PX4 原生起飞前检查和位置、速度有效性标志，再通过 `pxh` 发出 `commander takeoff`。PX4 自动进入 Hold，脚本保持约五秒后发出 `commander land`。确认落地并自动解除解锁后停止 logger，执行 `shutdown` 并检查退出码。唯一主动设置的 PX4 参数是 `SDLOG_MODE=2`，用于把地面和飞行阶段写入同一份原生日志。SIH 以 250 Hz 和默认 1×速度运行。 [PX4 日志文档](https://github.com/PX4/PX4-Autopilot/blob/v1.17.0/docs/en/dev_log/logging.md) · [PX4 PyULog](https://github.com/PX4/pyulog)
 
 已有 ULog 可直接重分析。例如 `python analyze_ulog.py evidence/flight.ulg --output runs/from-evidence`。分析检查飞行阶段、空中估计有效性、失效保护、自动解除解锁、四路电机命令和日志掉包，并输出 CSV、JSON 和误差图。分析以非零退出码报告未达阈值的运行。
 
