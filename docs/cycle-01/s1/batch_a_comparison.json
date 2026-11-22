@@ -1,0 +1,159 @@
+{
+  "git_sha": "a2068d1e8c8e2f2c3f62ec737b90937fa41b2028",
+  "git_dirty": false,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "fixture": {
+    "mass_kg": 1,
+    "J_B_kg_m2": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        3.0
+      ]
+    ],
+    "gravity_m_s2": 0,
+    "initial_q_WB": [
+      0.9887710779360424,
+      0.06100786211245919,
+      -0.12201572422491838,
+      0.06100786211245919
+    ],
+    "initial_omega_B_rad_s": [
+      0.02,
+      -0.03,
+      0.01
+    ],
+    "reference_q_WD": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "duration_s": 8,
+    "dt_s": 0.01,
+    "dt_control_s": 0.02,
+    "seed": 7,
+    "external_force_B_N": [
+      0,
+      0,
+      0
+    ],
+    "disturbance_B_Nm": [
+      0,
+      0,
+      0
+    ],
+    "actuation": "ideal unconstrained torque",
+    "pd_k_R": 4,
+    "pd_k_omega": 3,
+    "lqr_Q": [
+      [
+        4.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        4.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        3.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.0
+      ]
+    ],
+    "lqr_R": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "lqr_max_angle_rad": 0.5
+  },
+  "controllers": {
+    "geometric_pd": {
+      "final_error_rad": 0.0006980828425017965,
+      "final_rate_rad_s": 0.0026098734959569794,
+      "max_attitude_error_rad": 0.30094771397608405,
+      "settling_time_s": 4.54,
+      "settling_thresholds": {
+        "angle_rad": 0.02,
+        "rate_rad_s": 0.02
+      },
+      "torque_effort_Nm2_s": 0.5736084581389121,
+      "max_torque_Nm": 1.2925195335540078,
+      "trace_sha256": "6c617178c4107c5624e5373ea174ac2e0a7d2c2513d519f96cc40cee3706bc2b"
+    },
+    "local_lqr": {
+      "final_error_rad": 0.0012760507251000572,
+      "final_rate_rad_s": 0.0008865302730828701,
+      "max_attitude_error_rad": 0.3017565598579088,
+      "settling_time_s": 3.94,
+      "settling_thresholds": {
+        "angle_rad": 0.02,
+        "rate_rad_s": 0.02
+      },
+      "torque_effort_Nm2_s": 0.15738800338325468,
+      "max_torque_Nm": 0.7187385405070978,
+      "trace_sha256": "868ef8d4279b159ecfdb872e9b650fb08eea531e59f353ca7cb93982898e4e99"
+    }
+  }
+}
