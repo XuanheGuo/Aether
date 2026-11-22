@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/lcq/Documents/Codex/2026-11-22/x20/work/round7a/prototypes/iris_closed_loop/run.py", line 225, in <module>
+    main()
+  File "/Users/lcq/Documents/Codex/2026-11-22/x20/work/round7a/prototypes/iris_closed_loop/run.py", line 221, in main
+    print(json.dumps(run(args.px4_src, args.output, args.instance, args.fault), indent=2))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lcq/Documents/Codex/2026-11-22/x20/work/round7a/prototypes/iris_closed_loop/run.py", line 81, in run
+    px4.expect(PROMPT, timeout=35)
+  File "/Users/lcq/Documents/Codex/2026-11-22/x20/work/r5-env/lib/python3.12/site-packages/pexpect/spawnbase.py", line 354, in expect
+    return self.expect_list(compiled_pattern_list,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lcq/Documents/Codex/2026-11-22/x20/work/r5-env/lib/python3.12/site-packages/pexpect/spawnbase.py", line 383, in expect_list
+    return exp.expect_loop(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lcq/Documents/Codex/2026-11-22/x20/work/r5-env/lib/python3.12/site-packages/pexpect/expect.py", line 169, in expect_loop
+    incoming = spawn.read_nonblocking(spawn.maxread, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lcq/Documents/Codex/2026-11-22/x20/work/r5-env/lib/python3.12/site-packages/pexpect/pty_spawn.py", line 500, in read_nonblocking
+    if (timeout != 0) and select(timeout):
+                          ^^^^^^^^^^^^^^^
+  File "/Users/lcq/Documents/Codex/2026-11-22/x20/work/r5-env/lib/python3.12/site-packages/pexpect/pty_spawn.py", line 450, in select
+    return select_ignore_interrupts([self.child_fd], [], [], timeout)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lcq/Documents/Codex/2026-11-22/x20/work/r5-env/lib/python3.12/site-packages/pexpect/utils.py", line 143, in select_ignore_interrupts
+    return select.select(iwtd, owtd, ewtd, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

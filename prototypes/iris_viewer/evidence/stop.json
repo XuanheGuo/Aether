@@ -1,0 +1,12 @@
+{
+  "supervisor_status": 130,
+  "tracked_children": [
+    46193,
+    46194,
+    46201,
+    46207,
+    46208,
+    46332
+  ],
+  "remaining_pids": []
+}

@@ -1,0 +1,37 @@
+name: Iris Viewer regression
+on:
+  pull_request:
+    paths:
+      - 'prototypes/iris_viewer/**'
+      - 'prototypes/iris_closed_loop/**'
+      - 'prototypes/mujoco_sitl/**'
+      - '.github/workflows/iris-viewer.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'prototypes/iris_viewer/**'
+      - 'prototypes/iris_closed_loop/**'
+      - 'prototypes/mujoco_sitl/**'
+      - '.github/workflows/iris-viewer.yml'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r prototypes/iris_closed_loop/requirements.txt
+      - run: python -m unittest prototypes.iris_viewer.checks -v
+      - name: Verify the real macOS traces without opening a graphics window
+        run: |
+          unzip -q prototypes/iris_viewer/evidence/captures.zip -d runs
+          unzip -q prototypes/iris_closed_loop/evidence/captures.zip 'captures/r6-flight-a/*' -d runs
+          evidence="$PWD/prototypes/iris_viewer/evidence"
+          cmp "$evidence/replay-before.sha256" "$evidence/replay-after.sha256"
+          (cd runs/captures/r6-flight-a && sha256sum -c "$evidence/replay-after.sha256")
+          python -m prototypes.iris_viewer.verify \
+            --headless runs/captures/r7-headless --live runs/captures/r7-live-a \
+            --early-close runs/captures/r7-live-close --replay runs/captures/r6-flight-a \
+            --replay-trace "$evidence/replay-frames.jsonl" --out runs/verification.json

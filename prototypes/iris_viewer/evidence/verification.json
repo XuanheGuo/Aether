@@ -1,0 +1,471 @@
+{
+  "headless": {
+    "run": {
+      "arm_and_fly_requested": true,
+      "fault": null,
+      "px4_commit": "d6f12ad1c4f70ad3230afd7d86e971421e02fef4",
+      "port": 4567,
+      "instance": 7,
+      "automatic_reconnect_observed": null,
+      "px4_pid": 39908,
+      "mujoco_pid": 39906,
+      "px4_exit_code": 0,
+      "mujoco_exit_code": 0,
+      "stage": "completed",
+      "wall_duration_s": 26.03,
+      "resources": {
+        "px4": {
+          "samples": 81,
+          "peak_rss_mib": 6.02,
+          "median_cpu_percent_one_core": 15.3
+        },
+        "mujoco": {
+          "samples": 81,
+          "peak_rss_mib": 50.64,
+          "median_cpu_percent_one_core": 16.7
+        }
+      }
+    },
+    "simulation": {
+      "completion": "px4_socket_eof",
+      "steps": 5844,
+      "same_tick_returns": 5833,
+      "no_return_while_disarmed": 11,
+      "armed_ticks": 4968,
+      "total_mass_kg": 1.5349999999999995,
+      "nominal_timestep_us": 4000,
+      "origin_lla": [
+        47.397742,
+        8.545594,
+        488.0
+      ],
+      "iris_sdf_revision": "6697ab169ceab512dc706acea63df4c882662c60",
+      "mujoco_version": "4.0.1",
+      "mag_white_noise_density_gauss_sqrt_hz": 0.0004,
+      "mag_seed": 26,
+      "mag_nominal_hz": 100
+    },
+    "wire_counts": {
+      "rx:COMMAND_LONG": 1,
+      "rx:HEARTBEAT": 1,
+      "tx:HIL_SENSOR": 5845,
+      "tx:HIL_GPS": 1169,
+      "tx:HIL_STATE_QUATERNION": 1169,
+      "rx:HIL_ACTUATOR_CONTROLS": 5833
+    },
+    "timing": {
+      "integrated_ticks": 5844,
+      "matched_ticks": 5833,
+      "armed_ticks": 4968,
+      "unmatched_disarmed_ticks": 11,
+      "host_imu_to_actuator_ms": {
+        "median": 0.358084,
+        "p95": 0.8486917999999996,
+        "max": 41.098208
+      },
+      "sensor_hz": {
+        "imu": 250.0,
+        "mag_mean": 99.99144275201097,
+        "state": 50.0,
+        "gnss": 50.0
+      }
+    },
+    "flight": {
+      "px4_nav_states": [
+        4,
+        17,
+        4,
+        18,
+        4
+      ],
+      "px4_arm_states": [
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "ulog_dropouts": 0,
+      "peak_height_m": 2.4285158128571767,
+      "final_height_m": -0.001107719286932471,
+      "hold_s": 4.992,
+      "hold_truth_mean_height_m": 2.187853348368732,
+      "hold_mean_collective_body_thrust_n": 14.894542631060578,
+      "hold_estimator_position_rmse_ned_m": [
+        0.0026472981283674054,
+        0.005055079126050435,
+        0.004655082965047184
+      ],
+      "hold_estimator_velocity_rmse_ned_m_s": [
+        0.002543683177839419,
+        0.0035743755819955736,
+        0.0018142993383732848
+      ],
+      "hold_estimator_attitude_rmse_deg": 0.16569648678924623,
+      "hold_control_altitude_rmse_m": 0.08600632101297379,
+      "hold_control_attitude_rmse_deg": 0.01608642004430294,
+      "motor_force_counterfactual": {
+        "sim_s": 13.515999999998956,
+        "with_recorded_force_dv_against_zero_m_s": 0.03898202295982954,
+        "replay_vs_next_integration_abs_error_m_s": 0.0
+      },
+      "ulog_sensor_validation": {
+        "sensor_accel": {
+          "max_abs_error": 0.0047878947723152265,
+          "sample_coverage": 1.0,
+          "logged_hz": 250.0
+        },
+        "sensor_gyro": {
+          "max_abs_error": 0.0010601470396798878,
+          "sample_coverage": 1.0,
+          "logged_hz": 250.0
+        },
+        "sensor_mag": {
+          "max_abs_error": 1.4900153222363599e-08,
+          "sample_coverage": 1.0,
+          "logged_hz": 100.0
+        }
+      }
+    }
+  },
+  "live": {
+    "run": {
+      "arm_and_fly_requested": true,
+      "fault": null,
+      "px4_commit": "d6f12ad1c4f70ad3230afd7d86e971421e02fef4",
+      "port": 4567,
+      "instance": 7,
+      "automatic_reconnect_observed": null,
+      "px4_pid": 34763,
+      "mujoco_pid": 34758,
+      "px4_exit_code": 0,
+      "mujoco_exit_code": 0,
+      "stage": "completed",
+      "wall_duration_s": 27.477,
+      "resources": {
+        "px4": {
+          "samples": 86,
+          "peak_rss_mib": 5.5,
+          "median_cpu_percent_one_core": 10.5
+        },
+        "mujoco": {
+          "samples": 86,
+          "peak_rss_mib": 48.11,
+          "median_cpu_percent_one_core": 10.5
+        }
+      }
+    },
+    "simulation": {
+      "completion": "px4_socket_eof",
+      "steps": 6139,
+      "same_tick_returns": 6127,
+      "no_return_while_disarmed": 12,
+      "armed_ticks": 5134,
+      "total_mass_kg": 1.5349999999999995,
+      "nominal_timestep_us": 4000,
+      "origin_lla": [
+        47.397742,
+        8.545594,
+        488.0
+      ],
+      "iris_sdf_revision": "6697ab169ceab512dc706acea63df4c882662c60",
+      "mujoco_version": "4.0.1",
+      "mag_white_noise_density_gauss_sqrt_hz": 0.0004,
+      "mag_seed": 26,
+      "mag_nominal_hz": 100
+    },
+    "wire_counts": {
+      "rx:COMMAND_LONG": 1,
+      "rx:HEARTBEAT": 1,
+      "tx:HIL_SENSOR": 6140,
+      "tx:HIL_GPS": 1228,
+      "tx:HIL_STATE_QUATERNION": 1228,
+      "rx:HIL_ACTUATOR_CONTROLS": 6127
+    },
+    "timing": {
+      "integrated_ticks": 6139,
+      "matched_ticks": 6127,
+      "armed_ticks": 5134,
+      "unmatched_disarmed_ticks": 12,
+      "host_imu_to_actuator_ms": {
+        "median": 0.269667,
+        "p95": 0.8983252,
+        "max": 112.754833
+      },
+      "sensor_hz": {
+        "imu": 250.0,
+        "mag_mean": 99.9918540241121,
+        "state": 50.0,
+        "gnss": 50.0
+      }
+    },
+    "flight": {
+      "px4_nav_states": [
+        4,
+        17,
+        4,
+        18,
+        4
+      ],
+      "px4_arm_states": [
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "ulog_dropouts": 0,
+      "peak_height_m": 2.4410181944613862,
+      "final_height_m": -0.0011077205011937041,
+      "hold_s": 5.592,
+      "hold_truth_mean_height_m": 2.2133969236431588,
+      "hold_mean_collective_body_thrust_n": 14.90988171960136,
+      "hold_estimator_position_rmse_ned_m": [
+        0.0014903959315608023,
+        0.0012428809227259222,
+        0.008472080109018433
+      ],
+      "hold_estimator_velocity_rmse_ned_m_s": [
+        0.0026048502577720044,
+        0.002247679619009088,
+        0.001896800090059839
+      ],
+      "hold_estimator_attitude_rmse_deg": 0.30436807687363787,
+      "hold_control_altitude_rmse_m": 0.08112601935863495,
+      "hold_control_attitude_rmse_deg": 0.03055620566010475,
+      "motor_force_counterfactual": {
+        "sim_s": 14.227999999998877,
+        "with_recorded_force_dv_against_zero_m_s": 0.03901429534193661,
+        "replay_vs_next_integration_abs_error_m_s": 0.0
+      },
+      "ulog_sensor_validation": {
+        "sensor_accel": {
+          "max_abs_error": 0.0047878947723152265,
+          "sample_coverage": 1.0,
+          "logged_hz": 250.0
+        },
+        "sensor_gyro": {
+          "max_abs_error": 0.0010644918967143155,
+          "sample_coverage": 1.0,
+          "logged_hz": 250.0
+        },
+        "sensor_mag": {
+          "max_abs_error": 1.4896819999776767e-08,
+          "sample_coverage": 1.0,
+          "logged_hz": 100.0
+        }
+      }
+    },
+    "viewer": {
+      "observer_pid": 34753,
+      "observer_exit_code": 0,
+      "viewer_exited_before_experiment": true,
+      "viewer_peak_rss_mib": 631.0625,
+      "viewer_cpu_one_core_pct_median": 118.4,
+      "resource_samples": 102,
+      "closed_event": {
+        "event": "closed",
+        "host_ns": 28897045516958,
+        "reason": "test_close",
+        "frames": 430
+      },
+      "sampled_native_modes": {
+        "Hold": 169,
+        "Takeoff": 156,
+        "Land": 105
+      },
+      "frames": 430,
+      "observer_syncs_per_s": 18.823942662375607,
+      "native_sample_to_observer_sync_ms": [
+        67.85035450000001,
+        91.62588749999999,
+        408.291292
+      ],
+      "last_displayed_time_s": 22.832000000000964,
+      "unsupervised_physics_s_after_window_closed": 1.7200000000005744,
+      "simulator_round_trip_ms": {
+        "median": 0.269667,
+        "p95": 0.8983252,
+        "max": 112.754833
+      }
+    }
+  },
+  "early_close": {
+    "run": {
+      "arm_and_fly_requested": true,
+      "fault": null,
+      "px4_commit": "d6f12ad1c4f70ad3230afd7d86e971421e02fef4",
+      "port": 4566,
+      "instance": 6,
+      "automatic_reconnect_observed": null,
+      "px4_pid": 39320,
+      "mujoco_pid": 39307,
+      "px4_exit_code": 0,
+      "mujoco_exit_code": 0,
+      "stage": "completed",
+      "wall_duration_s": 26.579,
+      "resources": {
+        "px4": {
+          "samples": 84,
+          "peak_rss_mib": 5.66,
+          "median_cpu_percent_one_core": 10.2
+        },
+        "mujoco": {
+          "samples": 84,
+          "peak_rss_mib": 49.14,
+          "median_cpu_percent_one_core": 11.5
+        }
+      }
+    },
+    "simulation": {
+      "completion": "px4_socket_eof",
+      "steps": 5883,
+      "same_tick_returns": 5871,
+      "no_return_while_disarmed": 12,
+      "armed_ticks": 4908,
+      "total_mass_kg": 1.5349999999999995,
+      "nominal_timestep_us": 4000,
+      "origin_lla": [
+        47.397742,
+        8.545594,
+        488.0
+      ],
+      "iris_sdf_revision": "6697ab169ceab512dc706acea63df4c882662c60",
+      "mujoco_version": "4.0.1",
+      "mag_white_noise_density_gauss_sqrt_hz": 0.0004,
+      "mag_seed": 26,
+      "mag_nominal_hz": 100
+    },
+    "wire_counts": {
+      "rx:COMMAND_LONG": 1,
+      "rx:HEARTBEAT": 1,
+      "tx:HIL_SENSOR": 5884,
+      "tx:HIL_GPS": 1177,
+      "tx:HIL_STATE_QUATERNION": 1177,
+      "rx:HIL_ACTUATOR_CONTROLS": 5871
+    },
+    "timing": {
+      "integrated_ticks": 5883,
+      "matched_ticks": 5871,
+      "armed_ticks": 4908,
+      "unmatched_disarmed_ticks": 12,
+      "host_imu_to_actuator_ms": {
+        "median": 0.293875,
+        "p95": 1.003104,
+        "max": 213.536084
+      },
+      "sensor_hz": {
+        "imu": 250.0,
+        "mag_mean": 99.99150093489716,
+        "state": 50.0,
+        "gnss": 50.0
+      }
+    },
+    "flight": {
+      "px4_nav_states": [
+        4,
+        17,
+        4,
+        18,
+        4
+      ],
+      "px4_arm_states": [
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "ulog_dropouts": 0,
+      "peak_height_m": 2.413404858925048,
+      "final_height_m": -0.0011077170399507938,
+      "hold_s": 4.704,
+      "hold_truth_mean_height_m": 2.170587795090794,
+      "hold_mean_collective_body_thrust_n": 14.88754020023592,
+      "hold_estimator_position_rmse_ned_m": [
+        0.001287256557721167,
+        0.001757619742997148,
+        0.008496729380528461
+      ],
+      "hold_estimator_velocity_rmse_ned_m_s": [
+        0.0028460447132257643,
+        0.0025310296583450063,
+        0.0017431570604680838
+      ],
+      "hold_estimator_attitude_rmse_deg": 0.4274782840457504,
+      "hold_control_altitude_rmse_m": 0.08817722648382187,
+      "hold_control_attitude_rmse_deg": 0.03828684985637665,
+      "motor_force_counterfactual": {
+        "sim_s": 13.83199999999892,
+        "with_recorded_force_dv_against_zero_m_s": 0.0389926975124618,
+        "replay_vs_next_integration_abs_error_m_s": 0.0
+      },
+      "ulog_sensor_validation": {
+        "sensor_accel": {
+          "max_abs_error": 0.0047878947723152265,
+          "sample_coverage": 1.0,
+          "logged_hz": 250.0
+        },
+        "sensor_gyro": {
+          "max_abs_error": 0.001059483245823228,
+          "sample_coverage": 1.0,
+          "logged_hz": 250.0
+        },
+        "sensor_mag": {
+          "max_abs_error": 1.4897006128666845e-08,
+          "sample_coverage": 1.0,
+          "logged_hz": 100.00865501125152
+        }
+      }
+    },
+    "viewer": {
+      "observer_pid": 39299,
+      "observer_exit_code": 0,
+      "viewer_exited_before_experiment": true,
+      "viewer_peak_rss_mib": 482.640625,
+      "viewer_cpu_one_core_pct_median": 113.7,
+      "resource_samples": 70,
+      "closed_event": {
+        "event": "closed",
+        "host_ns": 29198131992291,
+        "reason": "test_close",
+        "frames": 292
+      },
+      "sampled_native_modes": {
+        "Hold": 133,
+        "Takeoff": 159
+      },
+      "frames": 292,
+      "observer_syncs_per_s": 19.526864355805753,
+      "native_sample_to_observer_sync_ms": [
+        68.1199995,
+        99.46342704999998,
+        247.802334
+      ],
+      "last_displayed_time_s": 15.119999999998779,
+      "unsupervised_physics_s_after_window_closed": 8.408000000002417,
+      "simulator_round_trip_ms": {
+        "median": 0.293875,
+        "p95": 1.003104,
+        "max": 213.536084
+      }
+    }
+  },
+  "replay": {
+    "frames_exactly_matched": 32,
+    "speeds": [
+      1.0,
+      2.0
+    ],
+    "cameras": [
+      "follow",
+      "free"
+    ],
+    "close": {
+      "event": "closed",
+      "host_ns": 29271752417666,
+      "reason": "window_closed",
+      "frames": 32
+    }
+  }
+}
