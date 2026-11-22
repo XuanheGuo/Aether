@@ -1,0 +1,13 @@
+test_initial_pose_and_units (prototypes.iris_closed_loop.checks.IrisChecks.test_initial_pose_and_units) ... ok
+test_motor_transfer (prototypes.iris_closed_loop.checks.IrisChecks.test_motor_transfer) ... ok
+test_mujoco_motor_indices_and_directions (prototypes.iris_closed_loop.checks.IrisChecks.test_mujoco_motor_indices_and_directions) ... ok
+test_official_sdf_parameter_parity (prototypes.iris_closed_loop.checks.IrisChecks.test_official_sdf_parameter_parity) ... ok
+test_offline_native_replay (prototypes.iris_closed_loop.checks.IrisChecks.test_offline_native_replay) ... ok
+test_display_model_is_a_clone_with_non_colliding_visuals (prototypes.iris_viewer.checks.ViewerChecks.test_display_model_is_a_clone_with_non_colliding_visuals) ... ok
+test_play_pause_seek_speed_and_ends (prototypes.iris_viewer.checks.ViewerChecks.test_play_pause_seek_speed_and_ends) ... ok
+test_tail_holds_partial_rows_and_replays_exact_values (prototypes.iris_viewer.checks.ViewerChecks.test_tail_holds_partial_rows_and_replays_exact_values) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.037s
+
+OK
