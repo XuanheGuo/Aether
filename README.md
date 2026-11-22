@@ -41,5 +41,5 @@ verification status and limitations.
 
 For the locked environment, use CPython 3.12 on Linux x86_64 and `uv sync --locked
 --extra test`. Failed runs preserve `partial_trajectory.npz` and a FAIL validation
-record; `failure_step_start_s` is the start of the failing step, not its internal stage
-time. Invariant changes under nonzero torque are not conservation errors.
+record; `failure_time_s` records the ODE stage time when known and is null otherwise;
+`failure_step_start_s` records the start of the failing step. Invariant changes under nonzero torque are not conservation errors.

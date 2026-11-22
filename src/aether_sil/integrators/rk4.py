@@ -17,11 +17,16 @@ def state_vector(state: RigidBodyState) -> Array:
 
 def evaluate_rhs(t_s: float, x: Array, params: RigidBodyParams, wrench: WrenchModel) -> Array:
     """Evaluate stateless wrench at the untouched raw stage and then the ODE."""
-    stage = StageState.from_array(x)
-    applied = wrench.evaluate(t_s, stage)
-    if not isinstance(applied, BodyWrench):
-        raise ValueError("wrench model must return BodyWrench")
-    return dxdt(t_s, x, params, applied)
+    try:
+        stage = StageState.from_array(x)
+        applied = wrench.evaluate(t_s, stage)
+        if not isinstance(applied, BodyWrench):
+            raise ValueError("wrench model must return BodyWrench")
+        return dxdt(t_s, x, params, applied)
+    except Exception as exc:
+        # Preserve the original exception type while exposing the stage clock.
+        exc.aether_failure_time_s = float(t_s)
+        raise
 
 
 @dataclass(frozen=True)

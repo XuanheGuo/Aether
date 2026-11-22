@@ -113,6 +113,8 @@ def run(config_path, output, seed=None):
                    'last_successful_step': len(states)-1,
                    'last_successful_time_s': float(times[len(states)-1]),
                    'failure_step_start_s': float(t),
+                   'failure_time_s': getattr(exc, 'aether_failure_time_s', None),
+                   'failure_time_note': 'ODE stage time; null when unavailable',
                    'exception_type': type(exc).__name__, 'exception_message': str(exc),
                    'partial_trajectory': 'partial_trajectory.npz'}
         (target/'validation.json').write_text(json.dumps(failure, indent=2)+'\n')

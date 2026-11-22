@@ -15,13 +15,13 @@ def test_cli_failure_checkpoint():
         code = '''
 from unittest.mock import patch
 from aether_sil.cli import main
-from aether_sil.integrators.rk4 import RK4
-original = RK4.step_with_diagnostics
-def injected(self, t, state, params, wrench, dt):
-    if t >= .03:
+from aether_sil.wrenches import ZeroWrench
+original = ZeroWrench.evaluate
+def injected(self, t, state):
+    if t >= .034:
         raise ValueError("injected solver failure")
-    return original(self, t, state, params, wrench, dt)
-with patch.object(RK4, "step_with_diagnostics", injected):
+    return original(self, t, state)
+with patch.object(ZeroWrench, "evaluate", injected):
     main(["run", "scenarios/free_rotation.yaml", "--output", OUTPUT])
 '''.replace('OUTPUT', repr(str(out)))
         result = subprocess.run([sys.executable, '-c', code], env=os.environ.copy(),
@@ -34,6 +34,7 @@ with patch.object(RK4, "step_with_diagnostics", injected):
         assert status['last_successful_step'] == 3
         assert status['last_successful_time_s'] == .03
         assert status['failure_step_start_s'] == .03
+        assert abs(status["failure_time_s"] - .035) < 1e-14
         with np.load(out/'partial_trajectory.npz') as trace:
             assert len(trace['t_s']) == 4
             assert trace['t_s'][-1] == .03
