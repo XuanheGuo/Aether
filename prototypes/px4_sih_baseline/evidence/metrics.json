@@ -1,0 +1,46 @@
+{
+  "pass": true,
+  "ulg_sha256": "37723173e5d95cc6b348da4846fc383ee3c5ab87dfc1cdd1919ec373209aa30c",
+  "ulg_duration_s": 26.344,
+  "px4_git_hash": "d6f12ad1c4f70ad3230afd7d86e971421e02fef4",
+  "aircraft": 10040,
+  "mode_sequence_armed": [
+    17,
+    4,
+    18
+  ],
+  "arm_time_s": 3.864,
+  "last_armed_sample_s": 25.932,
+  "checks": {
+    "stock_sih_quadrotor_airframe": true,
+    "ordered_flight_modes": true,
+    "estimator_valid_while_airborne": true,
+    "no_failsafe_while_armed": true,
+    "detector_reports_landing_after_takeoff": true,
+    "automatic_disarm_in_log": true,
+    "ulog_has_no_dropout": true,
+    "four_finite_positive_motors_during_hold": true
+  },
+  "metrics": {
+    "peak_estimated_height_m": 2.477569580078125,
+    "hold_duration_s": 4.84,
+    "hold_altitude_tracking_rmse_m": 0.07480019956543246,
+    "hold_horizontal_tracking_rmse_m": 0.14713070020993102,
+    "hold_attitude_tracking_rmse_deg": 1.0424601207312447,
+    "hold_altitude_estimator_rmse_m": 0.056513943066067454,
+    "hold_attitude_estimator_rmse_deg": 3.8554317557219235,
+    "full_log_peak_attitude_estimator_error_deg": 16.31241372211133,
+    "full_log_final_heading_estimator_error_deg": -16.058772137880556
+  },
+  "max_thresholds": {
+    "hold_altitude_tracking_rmse_m": 0.4,
+    "hold_horizontal_tracking_rmse_m": 0.7,
+    "hold_attitude_tracking_rmse_deg": 5.0,
+    "hold_altitude_estimator_rmse_m": 0.5,
+    "hold_attitude_estimator_rmse_deg": 5.0
+  },
+  "min_thresholds": {
+    "peak_estimated_height_m": 1.5,
+    "hold_duration_s": 4.0
+  }
+}
