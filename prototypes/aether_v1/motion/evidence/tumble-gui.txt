@@ -1,0 +1,19 @@
+Passed: True · /Users/lcq/Documents/Codex/2026-11-22/x20/work/motion-tumble-gui
+       17.33 real         8.68 user         3.53 sys
+           564346880  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              165285  page reclaims
+               11191  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                3926  voluntary context switches
+              101568  involuntary context switches
+         78473738071  instructions retired
+         33845000042  cycles elapsed
+          1465812888  peak memory footprint

@@ -1,0 +1,19 @@
+Passed: True · /Users/lcq/Documents/Codex/2026-11-22/x20/work/motion-vertical-gui
+       21.52 real         9.35 user         4.62 sys
+           622854144  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              191487  page reclaims
+               19196  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                8925  voluntary context switches
+              145724  involuntary context switches
+         84645428569  instructions retired
+         38385188532  cycles elapsed
+          1833224256  peak memory footprint

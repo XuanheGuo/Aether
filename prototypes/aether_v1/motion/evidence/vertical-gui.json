@@ -1,0 +1,164 @@
+{
+  "mujoco_version": "4.0.1",
+  "frozen_mjcf_sha256": "8d3fe77c3d6e23df9084c8eb112f00aded206ed8fcf11647fb1968543313457c",
+  "cases": {
+    "vertical": {
+      "case": "vertical",
+      "mass_kg": 11.4091119390522,
+      "timestep_s": 0.002,
+      "duration_s": 3.5,
+      "samples": 1751,
+      "integrator": "implicitfast",
+      "principal_moments_kg_m2": [
+        0.15441529628881723,
+        2.672908956271424,
+        2.6739651477046387
+      ],
+      "max_quaternion_norm_error": 4.440892098500626e-16,
+      "gravity_m_s2": -9.81,
+      "test_force_subweight_N": 83.94254109157657,
+      "test_force_boost_N": 139.90423515262762,
+      "subweight_mean_support_N": 27.980844660364866,
+      "liftoff_s": 1.002,
+      "recontact_s": 2.81,
+      "peak_com_rise_m": 1.5328056431423036,
+      "max_free_z_error_m": 0.005478885000019029,
+      "max_free_vz_error_m_s": 3.5083047578154947e-14,
+      "max_free_fd_accel_error_m_s2": 6.501466032204917e-13,
+      "boost_expected_accel_m_s2": 2.4525,
+      "boost_mean_fd_accel_m_s2": 2.4524999999999855,
+      "ballistic_mean_fd_accel_m_s2": -9.81,
+      "pass": true,
+      "viewer_synced_frames": 176,
+      "viewer_wall_duration_s": 11.096799124999961
+    },
+    "axis": {
+      "case": "axis",
+      "mass_kg": 11.4091119390522,
+      "timestep_s": 0.002,
+      "duration_s": 4.0,
+      "samples": 2001,
+      "integrator": "RK4",
+      "principal_moments_kg_m2": [
+        0.15441529628881723,
+        2.672908956271424,
+        2.6739651477046387
+      ],
+      "max_quaternion_norm_error": 1.1102230246251565e-15,
+      "initial_tilt_deg": 8.0,
+      "initial_omega_body_rad_s": [
+        -4.3299065569735735e-08,
+        2.1554800211656594e-13,
+        0.5499999999999982
+      ],
+      "initial_angular_momentum_world_kg_m2_s": [
+        -6.686038037020715e-09,
+        -0.01181975059106713,
+        0.08410189548205105
+      ],
+      "initial_kinetic_energy_J": 0.023355313563683665,
+      "angular_momentum_max_relative_drift": 6.8827614493906235e-15,
+      "kinetic_energy_max_relative_drift": 8.215650382226158e-15,
+      "max_com_speed_m_s": 1.778954478239404e-17,
+      "initial_to_final_angle_deg": 126.05071492878115,
+      "body_axial_inertia_increment_kg_m2": 0.0,
+      "pass": true,
+      "principal_axis_max_attitude_error_rad": 2.270802892852557e-15
+    },
+    "tumble": {
+      "case": "tumble",
+      "mass_kg": 11.4091119390522,
+      "timestep_s": 0.002,
+      "duration_s": 4.0,
+      "samples": 2001,
+      "integrator": "RK4",
+      "principal_moments_kg_m2": [
+        0.15441529628881723,
+        2.672908956271424,
+        2.6739651477046387
+      ],
+      "max_quaternion_norm_error": 1.1102230246251565e-15,
+      "initial_tilt_deg": 8.0,
+      "initial_omega_body_rad_s": [
+        0.28,
+        0.18,
+        0.48
+      ],
+      "initial_angular_momentum_world_kg_m2_s": [
+        0.7484146029255514,
+        0.4663141880615863,
+        0.1403839967140333
+      ],
+      "initial_kinetic_energy_J": 0.16588493525851866,
+      "angular_momentum_max_relative_drift": 2.4646967731648712e-14,
+      "kinetic_energy_max_relative_drift": 9.103828801926284e-15,
+      "max_com_speed_m_s": 6.626272307207842e-15,
+      "initial_to_final_angle_deg": 127.18584861477014,
+      "body_axial_inertia_increment_kg_m2": 0.0,
+      "pass": true
+    },
+    "inertia_variant": {
+      "case": "inertia_variant",
+      "mass_kg": 11.4091119390522,
+      "timestep_s": 0.002,
+      "duration_s": 4.0,
+      "samples": 2001,
+      "integrator": "RK4",
+      "principal_moments_kg_m2": [
+        0.23441529628881716,
+        2.6729089562714234,
+        2.6739651477046396
+      ],
+      "max_quaternion_norm_error": 1.1102230246251565e-15,
+      "initial_tilt_deg": 8.0,
+      "initial_omega_body_rad_s": [
+        0.28,
+        0.18,
+        0.48
+      ],
+      "initial_angular_momentum_world_kg_m2_s": [
+        0.7484146029255512,
+        0.4609699409847196,
+        0.1784102905537096
+      ],
+      "initial_kinetic_energy_J": 0.17510093525851853,
+      "angular_momentum_max_relative_drift": 1.5661616273263998e-14,
+      "kinetic_energy_max_relative_drift": 1.1102230246251565e-14,
+      "max_com_speed_m_s": 4.0634090347629896e-15,
+      "initial_to_final_angle_deg": 127.5875248466425,
+      "body_axial_inertia_increment_kg_m2": 0.08,
+      "pass": true
+    }
+  },
+  "vertical_half_timestep": {
+    "case": "vertical",
+    "mass_kg": 11.4091119390522,
+    "timestep_s": 0.001,
+    "duration_s": 3.5,
+    "samples": 3501,
+    "integrator": "implicitfast",
+    "principal_moments_kg_m2": [
+      0.15441529628881723,
+      2.672908956271424,
+      2.6739651477046387
+    ],
+    "max_quaternion_norm_error": 8.881784197001252e-16,
+    "gravity_m_s2": -9.81,
+    "test_force_subweight_N": 83.94254109157657,
+    "test_force_boost_N": 139.90423515262762,
+    "subweight_mean_support_N": 27.9808452444408,
+    "liftoff_s": 1.002,
+    "recontact_s": 2.809,
+    "peak_com_rise_m": 1.5328056432007262,
+    "max_free_z_error_m": 0.0027394425000223377,
+    "max_free_vz_error_m_s": 3.530509218307998e-14,
+    "max_free_fd_accel_error_m_s2": 1.4583889651476056e-12,
+    "boost_expected_accel_m_s2": 2.4525,
+    "boost_mean_fd_accel_m_s2": 2.4524999999999775,
+    "ballistic_mean_fd_accel_m_s2": -9.809999999999963,
+    "pass": true
+  },
+  "vertical_position_error_refinement_ratio": 1.9999999999906382,
+  "tumble_final_attitude_difference_deg": 2.085374731750373,
+  "pass": true
+}

@@ -1,0 +1,26 @@
+name: Vehicle-V1 first motion
+on:
+  pull_request:
+    paths:
+      - 'prototypes/aether_v1/motion/**'
+      - 'prototypes/aether_v1/model/**'
+      - 'prototypes/aether_v1/validation/flight.py'
+      - '.github/workflows/vehicle-v1-motion.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'prototypes/aether_v1/motion/**'
+      - 'prototypes/aether_v1/model/**'
+      - 'prototypes/aether_v1/validation/flight.py'
+      - '.github/workflows/vehicle-v1-motion.yml'
+jobs:
+  native-dynamics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r prototypes/aether_v1/validation/requirements.txt
+      - run: python -m prototypes.aether_v1.motion.experiment --output runs/vehicle-v1-motion
+      - run: python -m prototypes.aether_v1.motion.plots runs/vehicle-v1-motion
