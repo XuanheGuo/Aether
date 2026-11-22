@@ -60,6 +60,7 @@ def run(config_path, output, seed=None):
                 'atol': 1e-13}, 'generated_utc': datetime.now(timezone.utc).isoformat(),
                 'results_path': str(target.resolve()), 'float_dtype': 'float64'}
     (target/'manifest.json').write_text(json.dumps(manifest, indent=2, allow_nan=False)+'\n')
+    k, t = 0, times[0]
     try:
         for k, t in enumerate(times):
             applied = wrench.evaluate(float(t), StageState.from_array(state_vector(state)))
@@ -85,22 +86,36 @@ def run(config_path, output, seed=None):
         j = params.J_B_kg_m2
         energy = np.array([.5*s.omega_B @ j @ s.omega_B for s in states])
         momentum = np.array([rotation_matrix(s.q_WB) @ j @ s.omega_B for s in states])
+        zero_torque = bool(np.all(torque == 0))
         metrics = {'max_quaternion_norm_error': float(np.max(np.abs(np.array(norms[1:])-1))),
-                   'max_relative_energy_change': float(np.max(np.abs(energy-energy[0])) /
-                                                        max(abs(energy[0]), 1e-15)),
-                   'max_relative_world_momentum_change': float(np.max(np.linalg.norm(
-                       momentum-momentum[0], axis=1))/max(np.linalg.norm(momentum[0]), 1e-15)),
+                   'rotational_invariants': {
+                       'interpretation': 'conservation_drift' if zero_torque else 'change_under_torque',
+                       'max_relative_energy_change': float(np.max(np.abs(energy-energy[0])) /
+                                                            max(abs(energy[0]), 1e-15)),
+                       'max_relative_world_momentum_change': float(np.max(np.linalg.norm(
+                           momentum-momentum[0], axis=1))/max(np.linalg.norm(momentum[0]), 1e-15))},
                    'max_reference_position_error_m': float(np.max(np.linalg.norm(x[:, :3]-y[:, :3], axis=1))),
                    'max_reference_attitude_error_rad': float(np.max(angles)),
-                   'analytic_error': None,
-                   'note': 'energy and momentum changes are not conservation errors under torque'}
+                   'analytic_error': {'status': 'not_applicable',
+                                      'reason': 'no analytic reference defined for this scenario'}}
         (target/'metrics.json').write_text(json.dumps(metrics, indent=2, allow_nan=False)+'\n')
         validation = {'run_status': 'completed', 'gate_s0': 'NOT EVALUATED',
                       'note': 'scenario execution does not establish formal S0 gate'}
         (target/'validation.json').write_text(json.dumps(validation, indent=2)+'\n')
     except Exception as exc:
-        (target/'validation.json').write_text(json.dumps({'run_status': 'FAIL',
-            'exception': f'{type(exc).__name__}: {exc}'}, indent=2)+'\n')
+        # States are appended only after accepted steps, including the initial sample.
+        partial = np.array([state_vector(s) for s in states])
+        np.savez(target/'partial_trajectory.npz', t_s=times[:len(states)],
+                 p_W_m=partial[:, :3], v_W_m_s=partial[:, 3:6],
+                 q_WB_wxyz=partial[:, 6:10], omega_B_rad_s=partial[:, 10:],
+                 q_norm_before=np.array(norms), dt_s=np.array(dt))
+        failure = {'run_status': 'FAIL', 'gate_s0': 'NOT EVALUATED',
+                   'last_successful_step': len(states)-1,
+                   'last_successful_time_s': float(times[len(states)-1]),
+                   'failure_step_start_s': float(t),
+                   'exception_type': type(exc).__name__, 'exception_message': str(exc),
+                   'partial_trajectory': 'partial_trajectory.npz'}
+        (target/'validation.json').write_text(json.dumps(failure, indent=2)+'\n')
         raise
     return target
 

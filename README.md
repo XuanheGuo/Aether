@@ -1,4 +1,4 @@
-# Aether SIL — Cycle-01 / S0 (T01–T05)
+# Aether SIL — Cycle-01 / S0
 
 Generic rigid-body dynamics in SI units. The original conventions are in
 [the interface contract](docs/cycle-01/interface_contract.md); the mathematical reference and
@@ -24,7 +24,7 @@ The SciPy DOP853 reference uses the same ODE and wrench evaluation with an indep
 adaptive integration algorithm, default rtol=1e-12 and atol=1e-13, and normalizes
 returned sample states. Analytic and invariant tests independently check the equations.
 
-No runnable scenario, manifest, S0 gate verdict, real EDF or control model is included.
+No real EDF or control model is included. See the gate report for the current verdict.
 
 Run the included synthetic scenario with:
 
@@ -38,3 +38,8 @@ manifest, NPZ trajectory, metrics and run validation. The initial sample has no
 preceding step, so its `q_norm_before` is NaN. The configuration digest hashes
 canonical sorted compact JSON of the resolved YAML. See the gate report for current
 verification status and limitations.
+
+For the locked environment, use CPython 3.12 on Linux x86_64 and `uv sync --locked
+--extra test`. Failed runs preserve `partial_trajectory.npz` and a FAIL validation
+record; `failure_step_start_s` is the start of the failing step, not its internal stage
+time. Invariant changes under nonzero torque are not conservation errors.
