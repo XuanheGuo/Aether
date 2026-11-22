@@ -49,9 +49,12 @@ def run(config_path, output, seed=None):
     forces, torques = [], []
     config_json = json.dumps(config, sort_keys=True, separators=(',', ':'), allow_nan=False)
     digest = hashlib.sha256(config_json.encode()).hexdigest()
-    (target/'resolved_config.yaml').write_text(yaml.safe_dump(config, sort_keys=True), encoding='utf-8')
-    sha, dirty = _revision()
-    manifest = {'contract_version': config['contract_version'], 'scenario_id': config['scenario_id'],
+    k, t = 0, times[0]
+    phase = 'artifact_write'
+    try:
+        (target/'resolved_config.yaml').write_text(yaml.safe_dump(config, sort_keys=True), encoding='utf-8')
+        sha, dirty = _revision()
+        manifest = {'contract_version': config['contract_version'], 'scenario_id': config['scenario_id'],
                 'config_sha256': digest, 'config_digest_encoding': 'canonical JSON UTF-8',
                 'git_sha': sha, 'git_dirty': dirty, 'python': sys.version,
                 'platform': platform.platform(), 'dependencies': {k: importlib.metadata.version(k)
@@ -59,9 +62,8 @@ def run(config_path, output, seed=None):
                 'integrator': 'classical RK4', 'reference': {'method': 'DOP853', 'rtol': 1e-12,
                 'atol': 1e-13}, 'generated_utc': datetime.now(timezone.utc).isoformat(),
                 'results_path': str(target.resolve()), 'float_dtype': 'float64'}
-    (target/'manifest.json').write_text(json.dumps(manifest, indent=2, allow_nan=False)+'\n')
-    k, t = 0, times[0]
-    try:
+        (target/'manifest.json').write_text(json.dumps(manifest, indent=2, allow_nan=False)+'\n')
+        phase = 'integration'
         for k, t in enumerate(times):
             applied = wrench.evaluate(float(t), StageState.from_array(state_vector(state)))
             forces.append(applied.force_B_N)
@@ -70,14 +72,18 @@ def run(config_path, output, seed=None):
                 state, diagnostic = RK4().step_with_diagnostics(float(t), state, params, wrench, dt)
                 states.append(state)
                 norms.append(diagnostic.quaternion_norm_before)
+        phase = 'postprocessing'
         x = np.array([state_vector(s) for s in states])
         force = np.array(forces)
         torque = np.array(torques)
+        phase = 'artifact_write'
         np.savez(target/'trajectory.npz', t_s=times, p_W_m=x[:, :3], v_W_m_s=x[:, 3:6],
                  q_WB_wxyz=x[:, 6:10], omega_B_rad_s=x[:, 10:], F_B_N=force,
                  tau_B_Nm=torque, q_norm_before=np.array(norms), dt_s=np.array(dt),
                  integrator=np.array('rk4'))
+        phase = 'reference_solver'
         ref = solve_reference(states[0], params, wrench, times)
+        phase = 'postprocessing'
         y = np.array([state_vector(s) for s in ref])
         # Stable geodesic distance, insensitive to q versus -q.
         qdiff = np.minimum(np.linalg.norm(x[:, 6:10]-y[:, 6:10], axis=1),
@@ -98,26 +104,38 @@ def run(config_path, output, seed=None):
                    'max_reference_attitude_error_rad': float(np.max(angles)),
                    'analytic_error': {'status': 'not_applicable',
                                       'reason': 'no analytic reference defined for this scenario'}}
+        phase = 'artifact_write'
         (target/'metrics.json').write_text(json.dumps(metrics, indent=2, allow_nan=False)+'\n')
         validation = {'run_status': 'completed', 'gate_s0': 'NOT EVALUATED',
                       'note': 'scenario execution does not establish formal S0 gate'}
         (target/'validation.json').write_text(json.dumps(validation, indent=2)+'\n')
     except Exception as exc:
-        # States are appended only after accepted steps, including the initial sample.
-        partial = np.array([state_vector(s) for s in states])
-        np.savez(target/'partial_trajectory.npz', t_s=times[:len(states)],
-                 p_W_m=partial[:, :3], v_W_m_s=partial[:, 3:6],
-                 q_WB_wxyz=partial[:, 6:10], omega_B_rad_s=partial[:, 10:],
-                 q_norm_before=np.array(norms), dt_s=np.array(dt))
+        # Checkpoint and failure record are best effort: neither may mask the cause.
+        checkpoint_error = None
+        try:
+            partial = np.array([state_vector(item) for item in states])
+            np.savez(target/'partial_trajectory.npz', t_s=times[:len(states)],
+                     p_W_m=partial[:, :3], v_W_m_s=partial[:, 3:6],
+                     q_WB_wxyz=partial[:, 6:10], omega_B_rad_s=partial[:, 10:],
+                     q_norm_before=np.array(norms), dt_s=np.array(dt))
+        except Exception as checkpoint_exc:
+            checkpoint_error = f'{type(checkpoint_exc).__name__}: {checkpoint_exc}'
+            print(f'checkpoint write failed: {checkpoint_error}', file=sys.stderr)
+        stage_time = getattr(exc, 'aether_failure_time_s', None)
         failure = {'run_status': 'FAIL', 'gate_s0': 'NOT EVALUATED',
-                   'last_successful_step': len(states)-1,
+                   'failure_phase': phase, 'last_successful_step': len(states)-1,
                    'last_successful_time_s': float(times[len(states)-1]),
-                   'failure_step_start_s': float(t),
-                   'failure_time_s': getattr(exc, 'aether_failure_time_s', None),
-                   'failure_time_note': 'ODE stage time; null when unavailable',
+                   'failure_time_s': stage_time,
+                   'failure_time_note': ('ODE evaluation time' if stage_time is not None else
+                                         'No ODE evaluation time available for this failure'),
                    'exception_type': type(exc).__name__, 'exception_message': str(exc),
-                   'partial_trajectory': 'partial_trajectory.npz'}
-        (target/'validation.json').write_text(json.dumps(failure, indent=2)+'\n')
+                   'partial_trajectory': 'partial_trajectory.npz' if checkpoint_error is None else None,
+                   'checkpoint_error': checkpoint_error}
+        try:
+            (target/'validation.json').write_text(json.dumps(failure, indent=2)+'\n')
+        except Exception as record_exc:
+            print(f'failure record write failed: {type(record_exc).__name__}: {record_exc}',
+                  file=sys.stderr)
         raise
     return target
 
