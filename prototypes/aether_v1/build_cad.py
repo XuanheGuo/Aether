@@ -1,6 +1,6 @@
 """Create the Aether-V1 FreeCAD model using only native document features."""
 
-from math import cos, pi, sin, sqrt
+from math import cos, pi, sin
 from pathlib import Path
 
 import FreeCAD as App
