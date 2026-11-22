@@ -47,4 +47,6 @@ uv pip install --python .venv/bin/python -r requirements.txt
 
 直接使用 Simulator MAVLink 已满足本次端到端互操作性目标，适合继续验证同类标准四旋翼。当前证明 PX4 能发布外部传感器和真值、推进其仿真时钟并回传执行器帧。未解锁状态下的零输出只验证了回传链路。实际闭环前需选定匹配的标准机型和既有旋翼级模型，核对四个执行器的通道、量纲及反馈边界，然后验证依执行器返回推进的锁步握手、超时及断连恢复。还需评估传感器标定、噪声、启动有效性和故障行为。现有 Crazyflie MJCF 的合成推力与力矩接口和 PX4 Iris 配置存在差异，当前模型及数据不能作为闭环性能基准。
 
+兼容性细节需要单独验证。MAVLink 将 HIL_STATE_QUATERNION 的加速度字段标为 mG，而 v1.17 真值发布代码只除以 1000 后写入标为 m/s² 的本地位置加速度。本轮从 HIL_SENSOR 核对 IMU 加速度，真值消息按位置和姿态验收。接入下一轮前应针对该字段固定转换与回归检查。 [MAVLink 真值消息](https://mavlink.io/en/messages/common.html#HIL_STATE_QUATERNION) · [PX4 v1.17 真值发布代码](https://github.com/PX4/PX4-Autopilot/blob/v1.17.0/src/modules/simulation/simulator_mavlink/SimulatorMavlink.cpp#L551)
+
 v1.17 的一次连接生命周期和本轮观测到的无自动重连行为，需要由监督进程处理。新版桥接方案可在具备匹配机型、明确时间协议或内建恢复能力时对照评估。本轮继续采用直接接口，PX4、MuJoCo 及 MAVLink 编解码均复用既有实现。
