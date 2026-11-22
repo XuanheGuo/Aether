@@ -1,7 +1,7 @@
 """Continuous 6-DOF equations in ENU/FLU, SI units."""
 import numpy as np
 
-from .frames import _rotation_matrix_raw, quaternion_product
+from .frames import quaternion_product, rotation_matrix
 from .types import Array, BodyWrench, RigidBodyParams, scalar, vector
 
 
@@ -15,10 +15,11 @@ def dxdt(t_s: float, x: Array, params: RigidBodyParams, wrench: BodyWrench) -> A
         raise ValueError("t_s must be nonnegative")
     x = vector(x, (13,), "x")
     q, omega = x[6:10], x[10:13]
-    if np.linalg.norm(q) < 1e-12:
+    norm = np.linalg.norm(q)
+    if not np.isfinite(norm) or norm < 1e-12:
         raise ValueError("q_WB norm must be >= 1e-12")
     j = params.J_B_kg_m2
-    acceleration = _rotation_matrix_raw(q) @ wrench.force_B_N / params.mass_kg
+    acceleration = rotation_matrix(q / norm) @ wrench.force_B_N / params.mass_kg
     acceleration = acceleration + np.array([0., 0., -params.gravity_m_s2])
     qdot = 0.5 * quaternion_product(q, np.r_[0., omega])
     alpha = np.linalg.solve(j, wrench.torque_B_Nm - np.cross(omega, j @ omega))

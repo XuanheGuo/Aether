@@ -101,3 +101,11 @@ Suggested outputs: `manifest.json`, `resolved_config.yaml`, `trajectory.csv` or 
 ## 6. Open decisions (not blocking S0)
 
 Vehicle body axes relative to a specific physical nozzle, true inertia, thrust direction, spin-induced moments, aero coefficients, estimator sensor frame, and hardware bus/clock are intentionally unresolved.
+
+## Implementation clarification: solver stage state
+
+`WrenchModel.evaluate` receives a finite `StageState` during ODE evaluations. Its
+quaternion is unmodified and may be non-unit. Physical rotations are computed from
+a normalized copy, consistently with the force transformation in `dxdt`. The
+accepted external `RigidBodyState` remains normalized. This resolves the stage-state
+ambiguity without modifying intermediate values.

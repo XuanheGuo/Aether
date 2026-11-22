@@ -73,7 +73,7 @@ class TestIntegrators(unittest.TestCase):
             state = RigidBodyState([1, 2, 3], [2, -1, .5], [1, 0, 0, 0], [0]*3)
             out, diag = run(state, RigidBodyParams(1, np.eye(3), gravity), ZeroWrench(), .01, 500)
             np.testing.assert_allclose(out.p_W, state.p_W + 5*state.v_W +
-                                       [0, 0, -.5*gravity*25], atol=1e-9, rtol=0)
+                                       [0, 0, -.5*gravity*25], atol=1e-10 if gravity == 0 else 1e-9, rtol=0)
             self.assertEqual(len(diag), 500)
 
     def test_angular_invariants_and_rotation(self):
@@ -109,7 +109,8 @@ class TestIntegrators(unittest.TestCase):
             x, ref = state_vector(state), state_vector(reference)
             if np.dot(x[6:10], ref[6:10]) < 0:
                 x[6:10] *= -1
-            errors.append(np.linalg.norm(x-ref))
+            attitude = 4*np.arcsin(min(np.linalg.norm(x[6:10]-ref[6:10])/2, 1))
+            errors.append(np.linalg.norm(np.r_[x[:6]-ref[:6], attitude, x[10:]-ref[10:]]))
         orders = np.log2(np.array(errors[:-1])/errors[1:])
         self.assertTrue(np.all(orders[:2] >= 3.5), (errors, orders))
         self.assertLess(np.linalg.norm(state.p_W-reference.p_W), 1e-5)

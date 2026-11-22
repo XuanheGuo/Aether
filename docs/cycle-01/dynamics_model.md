@@ -59,3 +59,11 @@ R(q)v = v + 2w(r\times v)+2[r\times(r\times v)]
 ## 7. No implicit EDF model
 
 S0 may have a `ConstantBodyWrench` fixture and `ZeroWrench` fixture. A real EDF model requires separate validated parameters and input-to-wrench mapping, including spin reaction, tilt, rotor dynamics, airflow effects and constraints. Those belong to S1/S2 and shall be tagged `placeholder` until measured/validated.
+
+## Implementation clarification: off-manifold stages
+
+The formula in §3 is a rotation only for unit q. For numerical stages with non-unit
+q, the force transformation and any attitude-dependent wrench model both use
+R(q/||q||), computed from a copy. The quaternion derivative still uses the original
+stage q. This defines the ODE extension consistently without projecting an RK stage;
+accepted steps alone normalize the stored state. Degenerate q is rejected.

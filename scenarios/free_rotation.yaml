@@ -1,0 +1,30 @@
+# ILLUSTRATIVE S0 FIXTURE ONLY, not measured EDF vehicle parameters.
+scenario_id: s0.free_rotation.synthetic.v1
+contract_version: 1.0.0
+seed: 7
+simulation:
+  t0_s: 0.0
+  duration_s: 2.0
+  dt_s: 0.01
+  integrator: rk4
+  float_dtype: float64
+world:
+  frame: ENU
+  gravity_m_s2: 0.0  # special-case validation, not Earth flight
+body:
+  frame: FLU
+  mass_kg: 1.0
+  inertia_B_kg_m2:
+    - [1.0, 0.0, 0.0]
+    - [0.0, 2.0, 0.0]
+    - [0.0, 0.0, 3.0]
+initial_state:
+  p_W_m: [0.0, 0.0, 0.0]
+  v_W_m_s: [0.0, 0.0, 0.0]
+  q_WB_wxyz: [1.0, 0.0, 0.0, 0.0]
+  omega_B_rad_s: [0.3, -0.2, 0.4]
+wrench:
+  model: zero
+output:
+  samples: every_step
+  format: npz

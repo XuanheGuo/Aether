@@ -14,8 +14,8 @@ An attitude-dependent model must use `state.physical_rotation()` to obtain a phy
 rotation from a normalized copy, without changing the stage quaternion. This resolves
 the original contract's state type ambiguity for intermediate force evaluation; model
 authors must accept `StageState` and must not retain mutable hidden dynamics. The ODE
-continues to use the specified polynomial extension of R(q), and the original raw stage
-quaternion, for its derivatives; it does not silently normalize any intermediate state.
+uses the same physical rotation from a normalized copy for force transformation. The
+quaternion derivative uses the original stage quaternion; no stage state is modified.
 
 `RK4.step_with_diagnostics` returns the accepted state and that step's pre-correction
 quaternion norm and signed error; callers collecting a trajectory should retain each
@@ -25,3 +25,16 @@ adaptive integration algorithm, default rtol=1e-12 and atol=1e-13, and normalize
 returned sample states. Analytic and invariant tests independently check the equations.
 
 No runnable scenario, manifest, S0 gate verdict, real EDF or control model is included.
+
+Run the included synthetic scenario with:
+
+```sh
+python -m pip install -e '.[test]'
+python -m aether_sil run scenarios/free_rotation.yaml --seed 7 --output runs/free_rotation
+```
+
+The output directory must not already exist. It contains a resolved configuration,
+manifest, NPZ trajectory, metrics and run validation. The initial sample has no
+preceding step, so its `q_norm_before` is NaN. The configuration digest hashes
+canonical sorted compact JSON of the resolved YAML. See the gate report for current
+verification status and limitations.
