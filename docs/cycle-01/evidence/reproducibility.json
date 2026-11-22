@@ -1,0 +1,174 @@
+{
+  "tested_git_sha": "a7f142a7e55cc8f77aab5456392acd67b66de37b",
+  "environment": "CPython 3.12.14, Linux x86_64, uv 0.13.9; uv sync --locked --extra test --python 3.12.14",
+  "manifest_run1": {
+    "contract_version": "1.0.0",
+    "scenario_id": "s0.free_rotation.synthetic.v1",
+    "config_sha256": "4833df8a5a4dad0e701273a2ffbf0fdb8104c7f6c23dd112d0e9dfe4e4a352d6",
+    "config_digest_encoding": "canonical JSON UTF-8",
+    "git_sha": "a7f142a7e55cc8f77aab5456392acd67b66de37b",
+    "git_dirty": false,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "dependencies": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "PyYAML": "6.0.3"
+    },
+    "seed": 7,
+    "dt_s": 0.01,
+    "integrator": "classical RK4",
+    "reference": {
+      "method": "DOP853",
+      "rtol": 1e-12,
+      "atol": 1e-13
+    },
+    "generated_utc": "2026-11-22T05:05:46.021027+00:00",
+    "results_path": "/tmp/aether-final-evidence/run1",
+    "float_dtype": "float64"
+  },
+  "manifest_run2": {
+    "contract_version": "1.0.0",
+    "scenario_id": "s0.free_rotation.synthetic.v1",
+    "config_sha256": "4833df8a5a4dad0e701273a2ffbf0fdb8104c7f6c23dd112d0e9dfe4e4a352d6",
+    "config_digest_encoding": "canonical JSON UTF-8",
+    "git_sha": "a7f142a7e55cc8f77aab5456392acd67b66de37b",
+    "git_dirty": false,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "dependencies": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "PyYAML": "6.0.3"
+    },
+    "seed": 7,
+    "dt_s": 0.01,
+    "integrator": "classical RK4",
+    "reference": {
+      "method": "DOP853",
+      "rtol": 1e-12,
+      "atol": 1e-13
+    },
+    "generated_utc": "2026-11-22T05:05:48.279404+00:00",
+    "results_path": "/tmp/aether-final-evidence/run2",
+    "float_dtype": "float64"
+  },
+  "trajectory_sha256_run1": "712162c95e6b51b3aa16d172a783541091af255e2a9107e1534ceb936f6a34e2",
+  "trajectory_sha256_run2": "712162c95e6b51b3aa16d172a783541091af255e2a9107e1534ceb936f6a34e2",
+  "manifest_sha256_run1": "226f724aac442a9be377a12c69cc0b44adff66c89548766c547f3d88f11baf82",
+  "manifest_sha256_run2": "1bb7eac49679007a0e8a88025bcd13ebe18b42c4c77b455c61a5d68a10a734c2",
+  "failure_validation": {
+    "run_status": "FAIL",
+    "gate_s0": "NOT EVALUATED",
+    "last_successful_step": 3,
+    "last_successful_time_s": 0.03,
+    "failure_step_start_s": 0.03,
+    "failure_time_s": 0.034999999999999996,
+    "failure_time_note": "ODE stage time; null when unavailable",
+    "exception_type": "ValueError",
+    "exception_message": "injected solver failure",
+    "partial_trajectory": "partial_trajectory.npz"
+  },
+  "failure_checkpoint_sha256": "edcd221f4963c8910b7880e8c4f3418ee9e140e7e14d1e14f2e923944a934f27",
+  "failure_checkpoint": {
+    "t_s": [
+      0.0,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "p_W_m": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "v_W_m_s": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "q_WB_wxyz": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.9999963740053509,
+        0.0015019923439344193,
+        -0.0009969945516423633,
+        0.002000499190971768
+      ],
+      [
+        0.999985492085743,
+        0.003007938669777425,
+        -0.001987956493194033,
+        0.004001993500049261
+      ],
+      [
+        0.9999673484347225,
+        0.004517792735579279,
+        -0.002972853435616551,
+        0.006004477968916517
+      ]
+    ],
+    "omega_B_rad_s": [
+      [
+        0.3,
+        -0.2,
+        0.4
+      ],
+      [
+        0.30079779644614507,
+        -0.19879810274030166,
+        0.40019966447881117
+      ],
+      [
+        0.3015911715830097,
+        -0.19759242197814098,
+        0.4003986491722208
+      ],
+      [
+        0.30238010414010474,
+        -0.19638297436442806,
+        0.4005969409850705
+      ]
+    ]
+  },
+  "failure_exit_code": 2
+}

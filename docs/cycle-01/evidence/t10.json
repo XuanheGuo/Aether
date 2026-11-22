@@ -1,0 +1,81 @@
+{
+  "fixture": {
+    "state": [
+      0.1,
+      -0.2,
+      0.3,
+      0.2,
+      -0.1,
+      0.4,
+      0.8295613557843402,
+      0.20739033894608505,
+      -0.3110855084191276,
+      0.4147806778921701,
+      0.7,
+      -0.4,
+      0.9
+    ],
+    "mass_kg": 1.3,
+    "inertia_diag": [
+      0.7,
+      1.1,
+      1.6
+    ],
+    "gravity": 0,
+    "force_B_N": [
+      0.4,
+      -0.7,
+      0.3
+    ],
+    "torque_B_Nm": [
+      0.2,
+      -0.15,
+      0.3
+    ],
+    "duration_s": 2
+  },
+  "error_definition": "L2 of position, velocity, geodesic angle and body rate",
+  "standard_reference": {
+    "method": "DOP853",
+    "rtol": 1e-12,
+    "atol": 1e-13
+  },
+  "strict_reference": {
+    "method": "DOP853",
+    "rtol": 2.3e-14,
+    "atol": 2e-15,
+    "max_step_s": 0.025
+  },
+  "reference_disagreement": 4.891502238579476e-13,
+  "reference_disagreement_fraction_of_finest": 3.0292047082436573e-05,
+  "reference_check_limit": 0.01,
+  "levels": [
+    {
+      "steps": 10,
+      "dt_s": 0.2,
+      "error": 6.467020505682845e-05
+    },
+    {
+      "steps": 20,
+      "dt_s": 0.1,
+      "error": 4.099013893494038e-06,
+      "observed_order": 3.979752399834084
+    },
+    {
+      "steps": 40,
+      "dt_s": 0.05,
+      "error": 2.576950669289903e-07,
+      "observed_order": 3.991540054972813
+    },
+    {
+      "steps": 80,
+      "dt_s": 0.025,
+      "error": 1.6147810101006957e-08,
+      "observed_order": 3.9962544888872973
+    }
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0"
+}
