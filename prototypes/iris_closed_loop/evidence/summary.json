@@ -1,0 +1,524 @@
+{
+  "r6-flight-a": {
+    "run": {
+      "arm_and_fly_requested": true,
+      "fault": null,
+      "px4_commit": "d6f12ad1c4f70ad3230afd7d86e971421e02fef4",
+      "port": 4567,
+      "instance": 7,
+      "automatic_reconnect_observed": null,
+      "px4_pid": 5184,
+      "mujoco_pid": 5178,
+      "px4_exit_code": 0,
+      "mujoco_exit_code": 0,
+      "stage": "completed",
+      "wall_duration_s": 26.733,
+      "resources": {
+        "px4": {
+          "samples": 85,
+          "peak_rss_mib": 6.23,
+          "median_cpu_percent_one_core": 19.4
+        },
+        "mujoco": {
+          "samples": 85,
+          "peak_rss_mib": 60.12,
+          "median_cpu_percent_one_core": 28.9
+        }
+      }
+    },
+    "simulation": {
+      "completion": "px4_socket_closed",
+      "steps": 6043,
+      "same_tick_returns": 6032,
+      "no_return_while_disarmed": 11,
+      "armed_ticks": 5034,
+      "total_mass_kg": 1.5349999999999995,
+      "nominal_timestep_us": 4000,
+      "origin_lla": [
+        47.397742,
+        8.545594,
+        488.0
+      ],
+      "iris_sdf_revision": "6697ab169ceab512dc706acea63df4c882662c60",
+      "mujoco_version": "4.0.1",
+      "mag_white_noise_density_gauss_sqrt_hz": 0.0004,
+      "mag_seed": 26,
+      "mag_nominal_hz": 100
+    },
+    "wire_counts": {
+      "rx:COMMAND_LONG": 1,
+      "rx:HEARTBEAT": 1,
+      "tx:HIL_SENSOR": 6044,
+      "tx:HIL_GPS": 1209,
+      "tx:HIL_STATE_QUATERNION": 1209,
+      "rx:HIL_ACTUATOR_CONTROLS": 6032
+    },
+    "timing": {
+      "integrated_ticks": 6043,
+      "matched_ticks": 6032,
+      "armed_ticks": 5034,
+      "unmatched_disarmed_ticks": 11,
+      "host_imu_to_actuator_ms": {
+        "median": 0.4971045,
+        "p95": 1.3453600499999998,
+        "max": 59.963375
+      },
+      "sensor_hz": {
+        "imu": 250.0,
+        "mag_mean": 99.9917259639252,
+        "state": 50.0,
+        "gnss": 50.0
+      }
+    },
+    "flight": {
+      "px4_nav_states": [
+        4,
+        17,
+        4,
+        18,
+        4
+      ],
+      "px4_arm_states": [
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "ulog_dropouts": 0,
+      "peak_height_m": 2.43123373152144,
+      "final_height_m": -0.001107720514204602,
+      "hold_s": 5.256,
+      "hold_truth_mean_height_m": 2.192313718499202,
+      "hold_mean_collective_body_thrust_n": 14.901241896921775,
+      "hold_estimator_position_rmse_ned_m": [
+        0.0012431653026098732,
+        0.0013462458336961636,
+        0.008956794038626923
+      ],
+      "hold_estimator_velocity_rmse_ned_m_s": [
+        0.0020985614991509073,
+        0.001972187277239945,
+        0.002096232704976823
+      ],
+      "hold_estimator_attitude_rmse_deg": 0.2504417372680028,
+      "hold_control_altitude_rmse_m": 0.0856858342885971,
+      "hold_control_attitude_rmse_deg": 0.023720210418105125,
+      "motor_force_counterfactual": {
+        "sim_s": 13.947999999998908,
+        "with_recorded_force_dv_against_zero_m_s": 0.03899199058895783,
+        "replay_vs_next_integration_abs_error_m_s": 0.0
+      },
+      "ulog_sensor_validation": {
+        "sensor_accel": {
+          "max_abs_error": 0.0047878947723152265,
+          "sample_coverage": 1.0,
+          "logged_hz": 250.0
+        },
+        "sensor_gyro": {
+          "max_abs_error": 0.001064336715185129,
+          "sample_coverage": 1.0,
+          "logged_hz": 250.0
+        },
+        "sensor_mag": {
+          "max_abs_error": 1.4895761180078182e-08,
+          "sample_coverage": 1.0,
+          "logged_hz": 100.00840053763442
+        }
+      }
+    }
+  },
+  "r6-flight-b": {
+    "run": {
+      "arm_and_fly_requested": true,
+      "fault": null,
+      "px4_commit": "d6f12ad1c4f70ad3230afd7d86e971421e02fef4",
+      "port": 4567,
+      "instance": 7,
+      "automatic_reconnect_observed": null,
+      "px4_pid": 9158,
+      "mujoco_pid": 9154,
+      "px4_exit_code": 0,
+      "mujoco_exit_code": 0,
+      "stage": "completed",
+      "wall_duration_s": 26.308,
+      "resources": {
+        "px4": {
+          "samples": 83,
+          "peak_rss_mib": 5.92,
+          "median_cpu_percent_one_core": 17.1
+        },
+        "mujoco": {
+          "samples": 83,
+          "peak_rss_mib": 58.95,
+          "median_cpu_percent_one_core": 26.1
+        }
+      }
+    },
+    "simulation": {
+      "completion": "px4_socket_eof",
+      "steps": 6039,
+      "same_tick_returns": 6027,
+      "no_return_while_disarmed": 12,
+      "armed_ticks": 5029,
+      "total_mass_kg": 1.5349999999999995,
+      "nominal_timestep_us": 4000,
+      "origin_lla": [
+        47.397742,
+        8.545594,
+        488.0
+      ],
+      "iris_sdf_revision": "6697ab169ceab512dc706acea63df4c882662c60",
+      "mujoco_version": "4.0.1",
+      "mag_white_noise_density_gauss_sqrt_hz": 0.0004,
+      "mag_seed": 26,
+      "mag_nominal_hz": 100
+    },
+    "wire_counts": {
+      "rx:COMMAND_LONG": 1,
+      "rx:HEARTBEAT": 1,
+      "tx:HIL_SENSOR": 6040,
+      "tx:HIL_GPS": 1208,
+      "tx:HIL_STATE_QUATERNION": 1208,
+      "rx:HIL_ACTUATOR_CONTROLS": 6027
+    },
+    "timing": {
+      "integrated_ticks": 6039,
+      "matched_ticks": 6027,
+      "armed_ticks": 5029,
+      "unmatched_disarmed_ticks": 12,
+      "host_imu_to_actuator_ms": {
+        "median": 0.451208,
+        "p95": 1.1803410999999997,
+        "max": 21.177292
+      },
+      "sensor_hz": {
+        "imu": 250.0,
+        "mag_mean": 99.99171911228883,
+        "state": 50.0,
+        "gnss": 50.0
+      }
+    },
+    "flight": {
+      "px4_nav_states": [
+        4,
+        17,
+        4,
+        18,
+        4
+      ],
+      "px4_arm_states": [
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "ulog_dropouts": 0,
+      "peak_height_m": 2.4301587161670213,
+      "final_height_m": -0.0011077205011935515,
+      "hold_s": 5.208,
+      "hold_truth_mean_height_m": 2.194143926522206,
+      "hold_mean_collective_body_thrust_n": 14.900542286502612,
+      "hold_estimator_position_rmse_ned_m": [
+        0.0026124298671926977,
+        0.00177469691778069,
+        0.008551696557512775
+      ],
+      "hold_estimator_velocity_rmse_ned_m_s": [
+        0.002600080481201951,
+        0.002350871327531351,
+        0.001893089798014273
+      ],
+      "hold_estimator_attitude_rmse_deg": 0.21592183948391394,
+      "hold_control_altitude_rmse_m": 0.08412238955497742,
+      "hold_control_attitude_rmse_deg": 0.027207914739847183,
+      "motor_force_counterfactual": {
+        "sim_s": 14.031999999998899,
+        "with_recorded_force_dv_against_zero_m_s": 0.03901413955784275,
+        "replay_vs_next_integration_abs_error_m_s": 0.0
+      },
+      "ulog_sensor_validation": {
+        "sensor_accel": {
+          "max_abs_error": 0.0047878947723152265,
+          "sample_coverage": 1.0,
+          "logged_hz": 250.0
+        },
+        "sensor_gyro": {
+          "max_abs_error": 0.0010645696863206713,
+          "sample_coverage": 1.0,
+          "logged_hz": 250.0
+        },
+        "sensor_mag": {
+          "max_abs_error": 1.4893929201065248e-08,
+          "sample_coverage": 1.0,
+          "logged_hz": 100.0
+        }
+      }
+    }
+  },
+  "r6-disconnect": {
+    "run": {
+      "arm_and_fly_requested": false,
+      "fault": "disconnect",
+      "px4_commit": "d6f12ad1c4f70ad3230afd7d86e971421e02fef4",
+      "port": 4567,
+      "instance": 7,
+      "automatic_reconnect_observed": false,
+      "px4_pid": 9673,
+      "mujoco_pid": 9670,
+      "px4_exit_code": 0,
+      "mujoco_exit_code": 0,
+      "stage": "completed",
+      "wall_duration_s": 5.434
+    },
+    "simulation": {
+      "completion": "deliberate_local_disconnect",
+      "steps": 500,
+      "same_tick_returns": 486,
+      "no_return_while_disarmed": 14,
+      "armed_ticks": 0,
+      "total_mass_kg": 1.5349999999999995,
+      "nominal_timestep_us": 4000,
+      "origin_lla": [
+        47.397742,
+        8.545594,
+        488.0
+      ],
+      "iris_sdf_revision": "6697ab169ceab512dc706acea63df4c882662c60",
+      "mujoco_version": "4.0.1",
+      "mag_white_noise_density_gauss_sqrt_hz": 0.0004,
+      "mag_seed": 26,
+      "mag_nominal_hz": 100
+    },
+    "wire_counts": {
+      "rx:COMMAND_LONG": 1,
+      "rx:HEARTBEAT": 1,
+      "tx:HIL_SENSOR": 501,
+      "tx:HIL_GPS": 101,
+      "tx:HIL_STATE_QUATERNION": 101,
+      "rx:HIL_ACTUATOR_CONTROLS": 486
+    },
+    "timing": {
+      "integrated_ticks": 500,
+      "matched_ticks": 486,
+      "armed_ticks": 0,
+      "unmatched_disarmed_ticks": 14,
+      "host_imu_to_actuator_ms": {
+        "median": 0.3958335,
+        "p95": 1.20464525,
+        "max": 4.850125
+      },
+      "sensor_hz": {
+        "imu": 250.0,
+        "mag_mean": 100.0,
+        "state": 50.0,
+        "gnss": 50.0
+      }
+    }
+  },
+  "r6-armed-timeout": {
+    "run": {
+      "arm_and_fly_requested": true,
+      "fault": "timeout",
+      "px4_commit": "d6f12ad1c4f70ad3230afd7d86e971421e02fef4",
+      "port": 4566,
+      "instance": 6,
+      "automatic_reconnect_observed": null,
+      "px4_pid": 12082,
+      "mujoco_pid": 12080,
+      "fault_elapsed_s": 0.718,
+      "px4_exit_code": 0,
+      "mujoco_exit_code": 1,
+      "stage": "completed",
+      "wall_duration_s": 13.691,
+      "resources": {
+        "px4": {
+          "samples": 38,
+          "peak_rss_mib": 5.73,
+          "median_cpu_percent_one_core": 17.9
+        },
+        "mujoco": {
+          "samples": 38,
+          "peak_rss_mib": 50.88,
+          "median_cpu_percent_one_core": 25.3
+        }
+      }
+    },
+    "simulation": {
+      "completion": "armed_actuator_timeout",
+      "steps": 2771,
+      "same_tick_returns": 2759,
+      "no_return_while_disarmed": 12,
+      "armed_ticks": 2003,
+      "total_mass_kg": 1.5349999999999995,
+      "nominal_timestep_us": 4000,
+      "origin_lla": [
+        47.397742,
+        8.545594,
+        488.0
+      ],
+      "iris_sdf_revision": "6697ab169ceab512dc706acea63df4c882662c60",
+      "mujoco_version": "4.0.1",
+      "mag_white_noise_density_gauss_sqrt_hz": 0.0004,
+      "mag_seed": 26,
+      "mag_nominal_hz": 100
+    },
+    "wire_counts": {
+      "rx:COMMAND_LONG": 1,
+      "rx:HEARTBEAT": 1,
+      "tx:HIL_SENSOR": 2772,
+      "tx:HIL_GPS": 555,
+      "tx:HIL_STATE_QUATERNION": 555,
+      "rx:HIL_ACTUATOR_CONTROLS": 2759
+    },
+    "timing": {
+      "integrated_ticks": 2771,
+      "matched_ticks": 2759,
+      "armed_ticks": 2003,
+      "unmatched_disarmed_ticks": 12,
+      "host_imu_to_actuator_ms": {
+        "median": 0.451625,
+        "p95": 1.0686582999999992,
+        "max": 57.870584
+      },
+      "sensor_hz": {
+        "imu": 250.0,
+        "mag_mean": 100.0,
+        "state": 50.0,
+        "gnss": 50.0
+      }
+    }
+  },
+  "r6-restart-smoke": {
+    "run": {
+      "arm_and_fly_requested": true,
+      "fault": null,
+      "px4_commit": "d6f12ad1c4f70ad3230afd7d86e971421e02fef4",
+      "port": 4567,
+      "instance": 7,
+      "automatic_reconnect_observed": null,
+      "px4_pid": 17367,
+      "mujoco_pid": 17361,
+      "px4_exit_code": 0,
+      "mujoco_exit_code": 0,
+      "stage": "completed",
+      "wall_duration_s": 25.224,
+      "resources": {
+        "px4": {
+          "samples": 81,
+          "peak_rss_mib": 6.5,
+          "median_cpu_percent_one_core": 19.4
+        },
+        "mujoco": {
+          "samples": 81,
+          "peak_rss_mib": 53.81,
+          "median_cpu_percent_one_core": 21.9
+        }
+      }
+    },
+    "simulation": {
+      "completion": "px4_socket_closed",
+      "steps": 6027,
+      "same_tick_returns": 6017,
+      "no_return_while_disarmed": 10,
+      "armed_ticks": 5079,
+      "total_mass_kg": 1.5349999999999995,
+      "nominal_timestep_us": 4000,
+      "origin_lla": [
+        47.397742,
+        8.545594,
+        488.0
+      ],
+      "iris_sdf_revision": "6697ab169ceab512dc706acea63df4c882662c60",
+      "mujoco_version": "4.0.1",
+      "mag_white_noise_density_gauss_sqrt_hz": 0.0004,
+      "mag_seed": 26,
+      "mag_nominal_hz": 100
+    },
+    "wire_counts": {
+      "rx:COMMAND_LONG": 1,
+      "rx:HEARTBEAT": 1,
+      "tx:HIL_SENSOR": 6028,
+      "tx:HIL_GPS": 1206,
+      "tx:HIL_STATE_QUATERNION": 1206,
+      "rx:HIL_ACTUATOR_CONTROLS": 6017
+    },
+    "timing": {
+      "integrated_ticks": 6027,
+      "matched_ticks": 6017,
+      "armed_ticks": 5079,
+      "unmatched_disarmed_ticks": 10,
+      "host_imu_to_actuator_ms": {
+        "median": 0.426167,
+        "p95": 0.7651414,
+        "max": 9.943875
+      },
+      "sensor_hz": {
+        "imu": 250.0,
+        "mag_mean": 100.0,
+        "state": 50.0,
+        "gnss": 50.0
+      }
+    },
+    "flight": {
+      "px4_nav_states": [
+        4,
+        17,
+        17,
+        4,
+        18,
+        4
+      ],
+      "px4_arm_states": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "ulog_dropouts": 0,
+      "peak_height_m": 2.435059111592123,
+      "final_height_m": -0.0011077187010357509,
+      "hold_s": 5.352,
+      "hold_truth_mean_height_m": 2.204184234737877,
+      "hold_mean_collective_body_thrust_n": 14.904718567707935,
+      "hold_estimator_position_rmse_ned_m": [
+        0.0015647398794831652,
+        0.001788984202065295,
+        0.008674415321228363
+      ],
+      "hold_estimator_velocity_rmse_ned_m_s": [
+        0.0027826829519654096,
+        0.002603817987860658,
+        0.0019226054686483057
+      ],
+      "hold_estimator_attitude_rmse_deg": 0.19371213435257084,
+      "hold_control_altitude_rmse_m": 0.08240055292844772,
+      "hold_control_attitude_rmse_deg": 0.027547180652618408,
+      "motor_force_counterfactual": {
+        "sim_s": 14.055999999998896,
+        "with_recorded_force_dv_against_zero_m_s": 0.03905604007862322,
+        "replay_vs_next_integration_abs_error_m_s": 0.0
+      },
+      "ulog_sensor_validation": {
+        "sensor_accel": {
+          "max_abs_error": 0.0047878947723152265,
+          "sample_coverage": 1.0,
+          "logged_hz": 250.0
+        },
+        "sensor_gyro": {
+          "max_abs_error": 0.001063367504274469,
+          "sample_coverage": 1.0,
+          "logged_hz": 250.0
+        },
+        "sensor_mag": {
+          "max_abs_error": 1.4898277167496587e-08,
+          "sample_coverage": 1.0,
+          "logged_hz": 100.00840760047083
+        }
+      }
+    }
+  }
+}

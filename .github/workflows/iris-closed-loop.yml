@@ -1,0 +1,31 @@
+name: Iris closed-loop evidence
+on:
+  pull_request:
+    paths:
+      - 'prototypes/iris_closed_loop/**'
+      - 'prototypes/mujoco_sitl/**'
+      - '.github/workflows/iris-closed-loop.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'prototypes/iris_closed_loop/**'
+      - 'prototypes/mujoco_sitl/**'
+      - '.github/workflows/iris-closed-loop.yml'
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r prototypes/iris_closed_loop/requirements.txt
+      - run: python -m unittest prototypes.iris_closed_loop.checks -v
+      - name: Reanalyze the recorded macOS runs
+        run: |
+          unzip -q prototypes/iris_closed_loop/evidence/captures.zip -d runs
+          python -m prototypes.iris_closed_loop.analyze \
+            runs/captures/r6-flight-a runs/captures/r6-flight-b \
+            runs/captures/r6-disconnect runs/captures/r6-armed-timeout \
+            runs/captures/r6-restart-smoke --out runs/analysis
