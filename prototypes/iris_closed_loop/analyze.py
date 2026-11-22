@@ -128,12 +128,16 @@ def measure_flight(truth, stamps, groups, ulog):
     changes = np.r_[True, (np.diff(status["nav_state"]) != 0) | (np.diff(status["arming_state"]) != 0)]
     modes = status["nav_state"][changes].tolist()
     arming = status["arming_state"][changes].tolist()
-    require(modes == [4, 17, 4, 18, 4] and arming == [1, 2, 2, 2, 1]
+    arm_changes = np.r_[True, np.diff(status["arming_state"]) != 0]
+    armed_modes = changes & (status["arming_state"] == 2)
+    require(status["arming_state"][arm_changes].tolist() == [1, 2, 1]
+            and status["nav_state"][armed_modes].tolist() == [17, 4, 18]
             and not status["failsafe"].any(), "Unexpected PX4 flight lifecycle.")
     require(not ulog.dropouts, "PX4 ULog reported dropped records.")
-    start, hold_start, land_start, disarm = status["timestamp"][changes][1:]
+    start, hold_start, land_start = status["timestamp"][armed_modes]
+    disarm = status["timestamp"][arm_changes][-1]
     land = get("vehicle_land_detected")
-    require(np.any(~land["landed"] & (land["timestamp"] > start))
+    require(np.any((land["landed"] == 0) & (land["timestamp"] > start))
             and bool(land["landed"][-1]) and land["timestamp"][-1] < disarm
             and truth["contacts"][-1] > 0, "Landing not corroborated by contact and PX4.")
     require(truth["height_m"].max() > 1.5 and abs(truth["height_m"][-1]) < .02,

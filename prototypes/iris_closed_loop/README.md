@@ -14,7 +14,7 @@ PX4 使用官方 `10015_gazebo-classic_iris`，物理参数来自 PX4 v1.17.0 �
 
 仿真时间戳从 1,000,000 μs 开始。每次积分前核对 PX4 的时间戳和 lockstep 标志。未解锁的启动期允许零力推进，解锁后等待同一步的输出，超时或断连即停止。配对延迟以同一主机的单调时钟计量，覆盖传输、主机调度和飞控处理。
 
-- **断连。** 2.000 s 时关闭 MuJoCo 连接，累计积分 500 步且全程上锁。1.5 s 探测期间未见 PX4 自动重连。清理旧进程后可用新的运行目录重新启动整个会话。
+- **断连。** 2.000 s 时关闭 MuJoCo 连接，累计积分 500 步且全程上锁。1.5 s 探测期间未见 PX4 自动重连。最终代码随后在同一端口 4567 用新的运行目录启动，第三次完成起降、自动上锁和正常退出。此次重启记录为 `r6-restart-smoke`。
 - **解锁超时。** 对当前测试的 PX4 子进程发送 SIGSTOP，中断同一步的输出。宿主观察到约 0.718 s 后 MuJoCo 以预期状态退出，配置等待上限为 0.6 s，差额含子进程清理和轮询。日志最后一条 IMU 比最后一条已积分记录晚 4 ms，没有积分未获回复的那一步。
 - **启动失败记录。** 一次在关闭连接后立即复用实例 7，PX4 启动脚本停在第一路 MAVLink 初始化附近，35 s 内未出现命令提示符。根因未确认。超时试验改用实例 6 后完成；复现命令为不同用例指定不同实例。归档保留此次失败的控制台和初始磁力计试跑。
 
@@ -67,6 +67,6 @@ export IRIS_SDF="$PX4_SRC/Tools/simulation/gazebo-classic/sitl_gazebo-classic/mo
 .venv/bin/python -m unittest prototypes.iris_closed_loop.checks -v
 ```
 
-仓库的 `evidence/captures.zip` 和独立交付包的 `captures/` 保留原生 ULog、MuJoCo 真值 CSV、载荷和控制量、原始 MAVLink 十六进制帧、PX4 控制台、配置和运行状态。解包后将四次有效试验的目录传给 `analyze`。两条故障用例、两次正常运行以及早期诊断都保留了原始文件。解析验证、图表和指标可从归档重生。PID、运行调度和日志哈希会随复跑变化。
+仓库的 `evidence/captures.zip` 和独立交付包的 `captures/` 保留原生 ULog、MuJoCo 真值 CSV、载荷和控制量、原始 MAVLink 十六进制帧、PX4 控制台、配置和运行状态。解包后可将三次完整飞行和两次故障试验的目录传给 `analyze`。早期诊断也保留了原始文件。解析验证、图表和指标可从归档重生。PID、运行调度和日志哈希会随复跑变化。
 
 PR #5、#6、#7 的既有 CI 成功后已依序合入 `main`。Round 6 使用独立分支。此次新增实验仅引用固定 Iris 参数与 Round 5 共用的通信代码，独立于 Vehicle-V1 和 S0/S1。 [PR #5](https://github.com/XuanheGuo/Aether/pull/5) · [PR #6](https://github.com/XuanheGuo/Aether/pull/6) · [PR #7](https://github.com/XuanheGuo/Aether/pull/7)

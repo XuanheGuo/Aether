@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12.10'
+          python-version: '3.12.14'
       - run: python -m pip install -r prototypes/iris_closed_loop/requirements.txt
       - run: python -m unittest prototypes.iris_closed_loop.checks -v
       - name: Reanalyze the recorded macOS runs
@@ -27,4 +27,5 @@ jobs:
           unzip -q prototypes/iris_closed_loop/evidence/captures.zip -d runs
           python -m prototypes.iris_closed_loop.analyze \
             runs/captures/r6-flight-a runs/captures/r6-flight-b \
-            runs/captures/r6-disconnect runs/captures/r6-armed-timeout --out runs/analysis
+            runs/captures/r6-disconnect runs/captures/r6-armed-timeout \
+            runs/captures/r6-restart-smoke --out runs/analysis
