@@ -1,0 +1,159 @@
+{
+  "checks": {
+    "separate_processes": true,
+    "px4_heartbeat_and_state_request": true,
+    "native_static_gravity_and_zero_rates": true,
+    "native_translation_and_rotation_observed": true,
+    "native_values_and_units_preserved_on_wire": true,
+    "correct_primary_imu_and_field_mask": true,
+    "ulog_values_match_mujoco": true,
+    "gps_values_match_mujoco": true,
+    "bad_crc_rejected_recovery_observed": true,
+    "zero_unexplained_wire_sequence_gaps": true,
+    "coverage_of_accepted_imu_within_ulog_window": true,
+    "return_clock_monotonic_and_paired": true,
+    "read_only_disarmed_and_zero_controls": true,
+    "normal_exit_and_no_ulog_dropout": true,
+    "deliberate_disconnect_and_clean_restart": true
+  },
+  "wire_counts_including_bad_crc": {
+    "rx:COMMAND_LONG": 1,
+    "rx:HEARTBEAT": 1,
+    "tx:HIL_SENSOR": 1351,
+    "tx:HIL_GPS": 271,
+    "tx:HIL_STATE_QUATERNION": 271,
+    "rx:HIL_ACTUATOR_CONTROLS": 1324
+  },
+  "mavlink_sequence_gaps": {
+    "tx": 0,
+    "rx": 0
+  },
+  "corrupted_packet_time_usec": 4480000,
+  "native_sim_clock_step_us": 4000,
+  "imu_configured_hz": 250.0,
+  "gps_and_attitude_configured_hz": 50.0,
+  "actuator_rx_effective_sim_hz": 248.68421052631578,
+  "sensor_to_actuator_return_latency": {
+    "pairs": 1324,
+    "p50_ms": 0.426813,
+    "p95_ms": 1.0365901499999997,
+    "max_ms": 10.990416
+  },
+  "ulog_capture": {
+    "sensor_accel": {
+      "matched": 1243,
+      "valid_tx_in_log_window": 1243,
+      "fraction": 1.0
+    },
+    "sensor_gyro": {
+      "matched": 1243,
+      "valid_tx_in_log_window": 1243,
+      "fraction": 1.0
+    },
+    "sensor_mag": {
+      "matched": 1243,
+      "valid_tx_in_log_window": 1245,
+      "fraction": 0.9983935742971888
+    },
+    "sensor_baro": {
+      "matched": 1243,
+      "valid_tx_in_log_window": 1245,
+      "fraction": 0.9983935742971888
+    }
+  },
+  "ulog_compare": {
+    "sensor_accel": {
+      "max_absolute_error": 0.004726955906806718,
+      "limit": 0.02,
+      "pass": true
+    },
+    "sensor_gyro": {
+      "max_absolute_error": 0.001061180737520484,
+      "limit": 0.0024,
+      "pass": true
+    },
+    "sensor_mag": {
+      "max_absolute_error": 1.48793195542396e-08,
+      "limit": 1e-06,
+      "pass": true
+    },
+    "sensor_baro": {
+      "max_absolute_error": 9.121611833506904e-05,
+      "limit": 0.0003,
+      "pass": true
+    },
+    "vehicle_local_position_groundtruth": {
+      "max_absolute_error": 0.017254123224553553,
+      "limit": 0.1,
+      "pass": true
+    },
+    "vehicle_attitude_groundtruth": {
+      "max_absolute_error": 0.0025639201871712016,
+      "limit": 0.01,
+      "pass": true
+    }
+  },
+  "gps_altitude_max_error_m": 0.016999999999995907,
+  "gps_latlon_max_error_deg": 7.105427357601002e-15,
+  "px4_ulog_sha256": "ac54baead81c18fec92b708560d730ab637eb7e97c5397762967cc945a0a4b87",
+  "mujoco_host_interval_p95_ms": 5.1617913999999985,
+  "processes": {
+    "px4_pid": 86174,
+    "mujoco_pid": 86172,
+    "tcp_port": 4567,
+    "instance": 7,
+    "px4_exit_status": 0,
+    "px4_exit_signal": null,
+    "mujoco_exit_status": 0,
+    "deliberate_disconnect": false,
+    "same_process_automatic_reconnect": null,
+    "wall_duration_s": 6.206,
+    "ulog_saved": true
+  },
+  "bridge": {
+    "last_sim_step": 1351,
+    "completion": "px4_socket_closed",
+    "model": "Menagerie Bitcraze Crazyflie 2",
+    "revision": "71f066ad0be9cd271f7ed58c030243ef157af9f4",
+    "mujoco": "4.0.1",
+    "numpy": "2.5.5",
+    "tcp_port": 4567,
+    "pymavlink": "2.4.50",
+    "peer": [
+      "127.0.0.1",
+      60044
+    ],
+    "origin_lla": [
+      47.397742,
+      8.545594,
+      488.0
+    ],
+    "step_us": 4000,
+    "clock_start_us": 1000000,
+    "fixture_release_s": 3.0,
+    "world_frame": "ENU",
+    "body_frame": "FLU",
+    "wire_world_frame": "NED",
+    "wire_body_frame": "FRD",
+    "return_controls_applied": false,
+    "rx_message_types": [
+      "COMMAND_LONG",
+      "HEARTBEAT",
+      "HIL_ACTUATOR_CONTROLS"
+    ]
+  },
+  "disconnect_and_restart": {
+    "px4_pid": 85901,
+    "mujoco_pid": 85896,
+    "tcp_port": 4567,
+    "instance": 7,
+    "px4_exit_status": 0,
+    "px4_exit_signal": null,
+    "mujoco_exit_status": 0,
+    "deliberate_disconnect": true,
+    "same_process_automatic_reconnect": false,
+    "wall_duration_s": 7.506,
+    "ulog_saved": true
+  },
+  "pass": true
+}
