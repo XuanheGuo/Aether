@@ -1,0 +1,231 @@
+{
+  "mujoco": "4.0.1",
+  "model_sha256": "8d3fe77c3d6e23df9084c8eb112f00aded206ed8fcf11647fb1968543313457c",
+  "duration_s": 2.0,
+  "cases": {
+    "fall": {
+      "case": "fall",
+      "integrator": "implicitfast",
+      "timestep_s": 0.002,
+      "samples": 1001,
+      "mass_kg": 11.4091119390522,
+      "principal_moments_kg_m2": [
+        0.15441529628881723,
+        2.672908956271423,
+        2.6739651477046387
+      ],
+      "max": {
+        "position_error_m": 0.019619999999870075,
+        "velocity_error_m_s": 1.8474111129762605e-13,
+        "attitude_error_rad": 1.2551169447634665e-18,
+        "angular_velocity_error_rad_s": 1.5406271005137062e-18,
+        "quaternion_norm_error": 0.0
+      },
+      "acceptance_upper_bounds": {
+        "quaternion_norm_error": 1e-12,
+        "position_error_m": 0.02,
+        "velocity_error_m_s": 1e-09,
+        "attitude_error_rad": 1e-09
+      },
+      "pass": true
+    },
+    "inertial": {
+      "case": "inertial",
+      "integrator": "implicitfast",
+      "timestep_s": 0.002,
+      "samples": 1001,
+      "mass_kg": 11.4091119390522,
+      "principal_moments_kg_m2": [
+        0.15441529628881723,
+        2.672908956271423,
+        2.6739651477046387
+      ],
+      "max": {
+        "position_error_m": 6.132209516498232e-13,
+        "velocity_error_m_s": 0.0,
+        "attitude_error_rad": 9.770066499083447e-16,
+        "angular_velocity_error_rad_s": 1.0048381600173558e-15,
+        "quaternion_norm_error": 0.0
+      },
+      "acceptance_upper_bounds": {
+        "quaternion_norm_error": 1e-12,
+        "position_error_m": 1e-09,
+        "velocity_error_m_s": 1e-09,
+        "attitude_error_rad": 1e-09
+      },
+      "pass": true
+    },
+    "tumble": {
+      "case": "tumble",
+      "integrator": "RK4",
+      "timestep_s": 0.002,
+      "samples": 1001,
+      "mass_kg": 11.4091119390522,
+      "principal_moments_kg_m2": [
+        0.15441529628881723,
+        2.672908956271423,
+        2.6739651477046387
+      ],
+      "max": {
+        "position_error_m": 6.98550373707572e-13,
+        "velocity_error_m_s": 6.647400269567771e-13,
+        "quaternion_norm_error": 9.992007221626409e-16,
+        "angular_momentum_relative_drift": 7.555029822159743e-13,
+        "energy_relative_drift": 1.1178197637199388e-14
+      },
+      "acceptance_upper_bounds": {
+        "quaternion_norm_error": 1e-12,
+        "angular_momentum_relative_drift": 1e-10,
+        "energy_relative_drift": 1e-10,
+        "position_error_m": 1e-10,
+        "velocity_error_m_s": 1e-10
+      },
+      "pass": true
+    },
+    "load": {
+      "case": "load",
+      "integrator": "implicitfast",
+      "timestep_s": 0.002,
+      "samples": 1001,
+      "mass_kg": 11.4091119390522,
+      "principal_moments_kg_m2": [
+        0.15441529628881723,
+        2.672908956271423,
+        2.6739651477046387
+      ],
+      "max": {
+        "position_error_m": 0.0004644916657386137,
+        "velocity_error_m_s": 3.332858826067209e-05,
+        "attitude_error_rad": 0.00044877174297648154,
+        "angular_velocity_error_rad_s": 6.031007805545767e-15,
+        "quaternion_norm_error": 8.881784197001252e-16
+      },
+      "acceptance_upper_bounds": {
+        "quaternion_norm_error": 1e-12,
+        "position_error_m": 0.0006,
+        "velocity_error_m_s": 8e-05,
+        "attitude_error_rad": 0.0008,
+        "angular_velocity_error_rad_s": 1e-06
+      },
+      "pass": true
+    },
+    "convergence": {
+      "trials": [
+        {
+          "case": "load",
+          "integrator": "implicitfast",
+          "timestep_s": 0.02,
+          "samples": 101,
+          "mass_kg": 11.4091119390522,
+          "principal_moments_kg_m2": [
+            0.15441529628881723,
+            2.672908956271423,
+            2.6739651477046387
+          ],
+          "max": {
+            "position_error_m": 0.004637459867898314,
+            "velocity_error_m_s": 0.00033651798364137776,
+            "attitude_error_rad": 0.004487717429789544,
+            "angular_velocity_error_rad_s": 4.4844858763052985e-15,
+            "quaternion_norm_error": 4.440892098500626e-16
+          },
+          "acceptance_upper_bounds": {
+            "quaternion_norm_error": 1e-12,
+            "position_error_m": 0.006,
+            "velocity_error_m_s": 0.0008,
+            "attitude_error_rad": 0.008,
+            "angular_velocity_error_rad_s": 1e-06
+          },
+          "pass": true
+        },
+        {
+          "case": "load",
+          "integrator": "implicitfast",
+          "timestep_s": 0.01,
+          "samples": 201,
+          "mass_kg": 11.4091119390522,
+          "principal_moments_kg_m2": [
+            0.15441529628881723,
+            2.672908956271423,
+            2.6739651477046387
+          ],
+          "max": {
+            "position_error_m": 0.00232081757090883,
+            "velocity_error_m_s": 0.0001672365595086515,
+            "attitude_error_rad": 0.0022438587148931955,
+            "angular_velocity_error_rad_s": 4.182890267822106e-15,
+            "quaternion_norm_error": 8.881784197001252e-16
+          },
+          "acceptance_upper_bounds": {
+            "quaternion_norm_error": 1e-12,
+            "position_error_m": 0.003,
+            "velocity_error_m_s": 0.0004,
+            "attitude_error_rad": 0.004,
+            "angular_velocity_error_rad_s": 1e-06
+          },
+          "pass": true
+        },
+        {
+          "case": "load",
+          "integrator": "implicitfast",
+          "timestep_s": 0.005,
+          "samples": 401,
+          "mass_kg": 11.4091119390522,
+          "principal_moments_kg_m2": [
+            0.15441529628881723,
+            2.672908956271423,
+            2.6739651477046387
+          ],
+          "max": {
+            "position_error_m": 0.0011609230533771166,
+            "velocity_error_m_s": 8.342099722100305e-05,
+            "attitude_error_rad": 0.0011219293574479734,
+            "angular_velocity_error_rad_s": 4.664135892548092e-15,
+            "quaternion_norm_error": 8.881784197001252e-16
+          },
+          "acceptance_upper_bounds": {
+            "quaternion_norm_error": 1e-12,
+            "position_error_m": 0.0015,
+            "velocity_error_m_s": 0.0002,
+            "attitude_error_rad": 0.002,
+            "angular_velocity_error_rad_s": 1e-06
+          },
+          "pass": true
+        },
+        {
+          "case": "load",
+          "integrator": "implicitfast",
+          "timestep_s": 0.0025,
+          "samples": 801,
+          "mass_kg": 11.4091119390522,
+          "principal_moments_kg_m2": [
+            0.15441529628881723,
+            2.672908956271423,
+            2.6739651477046387
+          ],
+          "max": {
+            "position_error_m": 0.0005805891367893754,
+            "velocity_error_m_s": 4.166853684268707e-05,
+            "attitude_error_rad": 0.0005609646787266914,
+            "angular_velocity_error_rad_s": 6.343329358808649e-15,
+            "quaternion_norm_error": 8.881784197001252e-16
+          },
+          "acceptance_upper_bounds": {
+            "quaternion_norm_error": 1e-12,
+            "position_error_m": 0.00075,
+            "velocity_error_m_s": 0.0001,
+            "attitude_error_rad": 0.001,
+            "angular_velocity_error_rad_s": 1e-06
+          },
+          "pass": true
+        }
+      ],
+      "observed_order": {
+        "position_error_m": 0.9992596710520261,
+        "attitude_error_rad": 0.9999999999975097
+      },
+      "pass": true
+    }
+  },
+  "pass": true
+}
