@@ -1,0 +1,23 @@
+{
+  "source_tag": "v1.17.0",
+  "source_commit": "d6f12ad1c4f70ad3230afd7d86e971421e02fef4",
+  "target": "px4_sitl_default",
+  "airframe": "10040_sihsim_quadx",
+  "build_jobs": 2,
+  "macos": "27.3",
+  "architecture": "arm64",
+  "macos_sdk": "27.0",
+  "apple_clang": "21.0.0 (clang-2100.3.27.1)",
+  "cmake": "4.4.0",
+  "ninja": "1.11.1.git.kitware.jobserver-1",
+  "python": "3.12.10",
+  "build_wall_s": 117.02,
+  "build_time_maximum_resident_bytes": 175669248,
+  "build_directory_mib_approx": 202,
+  "python_environment_mib_approx": 264,
+  "native_binary_bytes": 5781648,
+  "cmake_disable_find_package_protobuf": true,
+  "cmake_policy_version_minimum": "3.5",
+  "upstream_tracked_sources_modified": false,
+  "build_pass": true
+}

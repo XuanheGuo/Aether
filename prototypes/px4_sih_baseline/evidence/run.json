@@ -1,0 +1,19 @@
+{
+  "px4_commit": "d6f12ad1c4f70ad3230afd7d86e971421e02fef4",
+  "px4_version": "v1.17.0",
+  "airframe": "10040_sihsim_quadx",
+  "instance": 5,
+  "native_shutdown_exit_code": 0,
+  "preflight_local_position_valid": true,
+  "hold_observed": true,
+  "hold_request_s": 5.0,
+  "landed": true,
+  "disarmed": true,
+  "macos": "27.3",
+  "architecture": "arm64",
+  "wall_elapsed_s": 30.224,
+  "resource_samples": 57,
+  "sampled_peak_px4_rss_mib": 6.2,
+  "sampled_median_px4_cpu_percent_one_core": 20.5,
+  "sampled_peak_px4_cpu_percent_one_core": 26.1
+}
