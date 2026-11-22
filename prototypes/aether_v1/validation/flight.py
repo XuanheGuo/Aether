@@ -19,7 +19,7 @@ CASES = ("fall", "inertial", "tumble", "load", "convergence")
 CONVERGENCE_STEPS = (0.02, 0.01, 0.005, 0.0025)
 
 
-def flight_model(path, timestep, gravity, integrator):
+def flight_xml(path, timestep, gravity, integrator):
     """Fix all moving pieces at CAD neutral and preserve their explicit inertials."""
     xml = ET.parse(path).getroot()
     compiler = xml.find("compiler")
@@ -44,6 +44,11 @@ def flight_model(path, timestep, gravity, integrator):
             body.remove(proxy)
         for joint in body.findall("joint"):
             body.remove(joint)
+    return xml
+
+
+def flight_model(path, timestep, gravity, integrator):
+    xml = flight_xml(path, timestep, gravity, integrator)
     model = mujoco.MjModel.from_xml_string(ET.tostring(xml, encoding="unicode"))
     if (model.nq, model.nv, model.nu, model.neq) != (7, 6, 0, 0):
         raise RuntimeError("The flight assembly must have one free joint and no actuators.")
