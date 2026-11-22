@@ -1,0 +1,17 @@
+"""Re-run the CAD checks on a disposable copy of the saved delivery model."""
+from pathlib import Path
+import shutil
+import sys
+import tempfile
+
+folder = Path(__file__).resolve().parent
+sys.path.insert(0, str(folder))
+from check_cad import check
+
+model = folder / "model"
+with tempfile.TemporaryDirectory() as directory:
+    copy = Path(directory) / "Aether-V1.FCStd"
+    shutil.copyfile(model / copy.name, copy)
+    check(copy)
+    shutil.copyfile(copy.with_name("cad_checks.json"), model / "cad_checks.json")
+print("Aether V1 CAD checks passed.")

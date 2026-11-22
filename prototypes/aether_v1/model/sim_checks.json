@@ -1,0 +1,17 @@
+{
+  "mujoco": "4.0.1",
+  "meshes": 41,
+  "hinges": 6,
+  "concept_mass_kg": 11.40911,
+  "cad_pose_comparisons": 4,
+  "max_position_error_m": 4.263238524895585e-30,
+  "max_quaternion_component_norm_error": 3.0242454844080854e-16,
+  "elapsed_physics_s": 5.0,
+  "ground_contact_feet": [
+    "Foot1_contact",
+    "Foot2_contact",
+    "Foot3_contact",
+    "Foot4_contact"
+  ],
+  "max_actuator_error_degrees": 2.757
+}

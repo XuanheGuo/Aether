@@ -1,0 +1,13 @@
+"""Re-export the open Aether-V1 document after editing its dimensions."""
+import sys
+from pathlib import Path
+import FreeCAD as App
+
+folder = Path(__file__).resolve().parent
+sys.path.insert(0, str(folder))
+from export_sim import export
+
+doc = App.ActiveDocument
+if doc is None or doc.getObject("Vehicle") is None or not doc.FileName:
+    raise RuntimeError("Open and save Aether-V1.FCStd before exporting.")
+export(doc, Path(doc.FileName).resolve().parent)
