@@ -26,17 +26,17 @@ def plot(output, histories):
         ax.plot(time, signal(vertical, ref), "--", label="Contact-free reference")
         ax.set_ylabel(label)
     axes[2].set_ylim(-15, 10)
-    axes[2].set_title("Impact peak clipped here; full values in CSV", fontsize=9)
+    axes[2].set_title("See CSV for full impact peaks", fontsize=9)
     for field, label in (("applied_test", "Test"), ("gravity", "Gravity"),
                          ("contact", "Contact"), ("total_external", "Total external")):
         axes[3].plot(time, signal(vertical, f"{field}_force_N_z"), label=label)
     axes[3].set_ylim(-125, 175)
-    axes[3].set_title("Impact peak clipped here; full values in CSV", fontsize=9)
+    axes[3].set_title("See CSV for full impact peaks", fontsize=9)
     axes[3].set_ylabel("World Z force (N)")
     contact = signal(vertical, "contact_points") > 0
     for ax in axes:
         ax.fill_between(time, 0, 1, where=contact, alpha=.09, color="gray",
-                        transform=ax.get_xaxis_transform(), label="Contact")
+                        transform=ax.get_xaxis_transform(), label="Ground contact interval")
         ax.grid(alpha=.25)
         ax.legend(loc="upper left", ncols=3, fontsize=8)
     axes[-1].set_xlabel("Simulation time (s)")
