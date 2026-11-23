@@ -1,0 +1,1054 @@
+{
+  "frames": {
+    "Airframe": {
+      "parent": null,
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "Body": {
+      "parent": "Airframe",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "Mount0": {
+      "parent": "Panels",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          193.0
+        ]
+      },
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          193.0
+        ]
+      }
+    },
+    "Mount1": {
+      "parent": "Panels",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          0.7071067811865476,
+          0.0,
+          0.0,
+          0.7071067811865475
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          193.0
+        ]
+      },
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          0.7071067811865476,
+          0.0,
+          0.0,
+          0.7071067811865475
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          193.0
+        ]
+      }
+    },
+    "Mount2": {
+      "parent": "Panels",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          6.123233995736766e-17,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          193.0
+        ]
+      },
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          6.123233995736766e-17,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          193.0
+        ]
+      }
+    },
+    "Mount3": {
+      "parent": "Panels",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          -0.7071067811865475,
+          0.0,
+          0.0,
+          0.7071067811865476
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          193.0
+        ]
+      },
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          -0.7071067811865475,
+          0.0,
+          0.0,
+          0.7071067811865476
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          193.0
+        ]
+      }
+    },
+    "NoseFrame": {
+      "parent": "Body",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          640.0
+        ]
+      },
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          640.0
+        ]
+      }
+    },
+    "PanelJoint0": {
+      "axis_local": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Mount0",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          105.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sample_range_deg": [
+        -12.0,
+        12.0
+      ],
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          105.0,
+          0.0,
+          193.0
+        ]
+      }
+    },
+    "PanelJoint1": {
+      "axis_local": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Mount1",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          105.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sample_range_deg": [
+        -12.0,
+        12.0
+      ],
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          0.7071067811865476,
+          0.0,
+          0.0,
+          0.7071067811865475
+        ],
+        "translation_mm": [
+          2.3314683517128287e-14,
+          105.0,
+          193.0
+        ]
+      }
+    },
+    "PanelJoint2": {
+      "axis_local": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Mount2",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          105.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sample_range_deg": [
+        -12.0,
+        12.0
+      ],
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          6.123233995736766e-17,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "translation_mm": [
+          -105.0,
+          1.2858791391047208e-14,
+          193.0
+        ]
+      }
+    },
+    "PanelJoint3": {
+      "axis_local": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Mount3",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          105.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sample_range_deg": [
+        -12.0,
+        12.0
+      ],
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          -0.7071067811865475,
+          0.0,
+          0.0,
+          0.7071067811865476
+        ],
+        "translation_mm": [
+          -2.3314683517128287e-14,
+          -105.0,
+          193.0
+        ]
+      }
+    },
+    "Panels": {
+      "parent": "Airframe",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "Support": {
+      "parent": "Airframe",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "Tail": {
+      "parent": "Airframe",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "TailX": {
+      "axis_local": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Tail",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          -42.0
+        ]
+      },
+      "sample_range_deg": [
+        -12.0,
+        12.0
+      ],
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          -42.0
+        ]
+      }
+    },
+    "TailY": {
+      "axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "parent": "TailX",
+      "parent_from_frame": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sample_range_deg": [
+        -12.0,
+        12.0
+      ],
+      "world_from_frame_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          -42.0
+        ]
+      }
+    }
+  },
+  "mm_to_m": 0.001,
+  "nose_axis": "+Z",
+  "parts": {
+    "Collar": {
+      "parent": "Tail",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "triangles": 3346,
+      "visual_stl": "visual/Collar.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "Insert": {
+      "parent": "TailY",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "triangles": 4836,
+      "visual_stl": "visual/Insert.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          -42.0
+        ]
+      }
+    },
+    "Nose": {
+      "parent": "NoseFrame",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "triangles": 23612,
+      "visual_stl": "visual/Nose.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          640.0
+        ]
+      }
+    },
+    "Panel0": {
+      "parent": "PanelJoint0",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "triangles": 5822,
+      "visual_stl": "visual/Panel0.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          105.0,
+          0.0,
+          193.0
+        ]
+      }
+    },
+    "Panel1": {
+      "parent": "PanelJoint1",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "triangles": 5822,
+      "visual_stl": "visual/Panel1.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          0.7071067811865476,
+          0.0,
+          0.0,
+          0.7071067811865475
+        ],
+        "translation_mm": [
+          2.3314683517128287e-14,
+          105.0,
+          193.0
+        ]
+      }
+    },
+    "Panel2": {
+      "parent": "PanelJoint2",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "triangles": 5822,
+      "visual_stl": "visual/Panel2.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          6.123233995736766e-17,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "translation_mm": [
+          -105.0,
+          1.2858791391047208e-14,
+          193.0
+        ]
+      }
+    },
+    "Panel3": {
+      "parent": "PanelJoint3",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "triangles": 5822,
+      "visual_stl": "visual/Panel3.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          -0.7071067811865475,
+          0.0,
+          0.0,
+          0.7071067811865476
+        ],
+        "translation_mm": [
+          -2.3314683517128287e-14,
+          -105.0,
+          193.0
+        ]
+      }
+    },
+    "Pod0": {
+      "parent": "Mount0",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          88.0,
+          -9.0,
+          -25.0
+        ]
+      },
+      "triangles": 12,
+      "visual_stl": "visual/Pod0.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          88.0,
+          -9.0,
+          168.0
+        ]
+      }
+    },
+    "Pod1": {
+      "parent": "Mount1",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          88.0,
+          -9.0,
+          -25.0
+        ]
+      },
+      "triangles": 12,
+      "visual_stl": "visual/Pod1.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          0.7071067811865476,
+          0.0,
+          0.0,
+          0.7071067811865475
+        ],
+        "translation_mm": [
+          9.00000000000002,
+          88.0,
+          168.0
+        ]
+      }
+    },
+    "Pod2": {
+      "parent": "Mount2",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          88.0,
+          -9.0,
+          -25.0
+        ]
+      },
+      "triangles": 12,
+      "visual_stl": "visual/Pod2.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          6.123233995736766e-17,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "translation_mm": [
+          -88.0,
+          9.00000000000001,
+          168.0
+        ]
+      }
+    },
+    "Pod3": {
+      "parent": "Mount3",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          88.0,
+          -9.0,
+          -25.0
+        ]
+      },
+      "triangles": 12,
+      "visual_stl": "visual/Pod3.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          -0.7071067811865475,
+          0.0,
+          0.0,
+          0.7071067811865476
+        ],
+        "translation_mm": [
+          -9.00000000000002,
+          -88.0,
+          168.0
+        ]
+      }
+    },
+    "Rail0L": {
+      "parent": "Support",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          -55.0,
+          -32.0,
+          153.6
+        ]
+      },
+      "triangles": 12,
+      "visual_stl": "visual/Rail0L.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          -55.0,
+          -32.0,
+          153.6
+        ]
+      }
+    },
+    "Rail0R": {
+      "parent": "Support",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          46.0,
+          -32.0,
+          153.6
+        ]
+      },
+      "triangles": 12,
+      "visual_stl": "visual/Rail0R.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          46.0,
+          -32.0,
+          153.6
+        ]
+      }
+    },
+    "Rail1L": {
+      "parent": "Support",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          -55.0,
+          -32.0,
+          396.8
+        ]
+      },
+      "triangles": 12,
+      "visual_stl": "visual/Rail1L.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          -55.0,
+          -32.0,
+          396.8
+        ]
+      }
+    },
+    "Rail1R": {
+      "parent": "Support",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          46.0,
+          -32.0,
+          396.8
+        ]
+      },
+      "triangles": 12,
+      "visual_stl": "visual/Rail1R.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          46.0,
+          -32.0,
+          396.8
+        ]
+      }
+    },
+    "Ring": {
+      "parent": "TailX",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "triangles": 672,
+      "visual_stl": "visual/Ring.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          -42.0
+        ]
+      }
+    },
+    "Shell": {
+      "parent": "Body",
+      "parent_from_part": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "triangles": 672,
+      "visual_stl": "visual/Shell.stl",
+      "world_from_part_neutral": {
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "up_axis": "+Z"
+}

@@ -1,0 +1,21 @@
+"""Validate and export the currently open neutral Airframe-V2 document."""
+import sys
+from datetime import datetime
+from pathlib import Path
+
+import FreeCAD as App
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from exchange import dump, export
+from verify import verify
+
+doc = App.ActiveDocument
+if doc is None or not hasattr(doc, "Airframe") or not hasattr(doc, "Parameters"):
+    raise RuntimeError("Open the Airframe-V2 document first.")
+destination = Path(doc.FileName).resolve().parent / f"export-{datetime.now():%Y%m%d-%H%M%S}"
+export_checks = export(doc, destination)
+report = verify(doc)
+report["exchange"] = export_checks
+dump(destination / "geometry-checks.json", report)
+if not report["pass"]:
+    raise RuntimeError(f"Geometry checks failed; see {destination}")

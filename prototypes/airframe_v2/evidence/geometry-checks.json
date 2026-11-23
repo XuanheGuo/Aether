@@ -1,0 +1,846 @@
+{
+  "conservative_distance_fallbacks": [],
+  "declared_static_mount_overlap_mm3": {
+    "Shell/Pod0": 1664.796773249827,
+    "Shell/Pod1": 1664.7967732498255,
+    "Shell/Pod2": 1664.796773249825,
+    "Shell/Pod3": 1664.7967732498255
+  },
+  "exchange": {
+    "closed_visual_meshes": 17,
+    "step_round_trip_by_part": {
+      "Collar": {
+        "bounds_delta_mm": 3.0453861654677894e-11,
+        "relative_volume_delta": 0.0014542467685989369
+      },
+      "Insert": {
+        "bounds_delta_mm": 1.879385536085465e-12,
+        "relative_volume_delta": 1.0966350622924473e-13
+      },
+      "Nose": {
+        "bounds_delta_mm": 3.0453861654677894e-11,
+        "relative_volume_delta": 0.00721648171016211
+      },
+      "Panel0": {
+        "bounds_delta_mm": 5.059064278611913e-12,
+        "relative_volume_delta": 8.704028068006858e-14
+      },
+      "Panel1": {
+        "bounds_delta_mm": 5.059064278611913e-12,
+        "relative_volume_delta": 9.683951757782465e-14
+      },
+      "Panel2": {
+        "bounds_delta_mm": 5.059064278611913e-12,
+        "relative_volume_delta": 7.555499861019859e-13
+      },
+      "Panel3": {
+        "bounds_delta_mm": 5.059064278611913e-12,
+        "relative_volume_delta": 7.56126411801854e-13
+      },
+      "Pod0": {
+        "bounds_delta_mm": 0.0,
+        "relative_volume_delta": 0.0
+      },
+      "Pod1": {
+        "bounds_delta_mm": 1.9539925233402755e-14,
+        "relative_volume_delta": 0.0
+      },
+      "Pod2": {
+        "bounds_delta_mm": 1.0658141036401503e-14,
+        "relative_volume_delta": 0.0
+      },
+      "Pod3": {
+        "bounds_delta_mm": 1.9539925233402755e-14,
+        "relative_volume_delta": 0.0
+      },
+      "Rail0L": {
+        "bounds_delta_mm": 0.0,
+        "relative_volume_delta": 0.0
+      },
+      "Rail0R": {
+        "bounds_delta_mm": 0.0,
+        "relative_volume_delta": 0.0
+      },
+      "Rail1L": {
+        "bounds_delta_mm": 0.0,
+        "relative_volume_delta": 4.281990121341471e-16
+      },
+      "Rail1R": {
+        "bounds_delta_mm": 0.0,
+        "relative_volume_delta": 4.281990121341471e-16
+      },
+      "Ring": {
+        "bounds_delta_mm": 0.0,
+        "relative_volume_delta": 4.3665332580105793e-16
+      },
+      "Shell": {
+        "bounds_delta_mm": 0.0,
+        "relative_volume_delta": 1.3159143409368283e-15
+      }
+    },
+    "step_solids": 17
+  },
+  "freecad_version": "1.1.4",
+  "gap_method": "BRep surface distance near interfaces; conservative box spacing at or above 10 mm",
+  "joint_order": [
+    "PanelJoint0",
+    "PanelJoint1",
+    "PanelJoint2",
+    "PanelJoint3",
+    "TailX",
+    "TailY"
+  ],
+  "minimum_moving_gap_by_pair_mm": {
+    "Collar/Insert": 37.004658185454744,
+    "Collar/Ring": 13.620816940665126,
+    "Insert/Rail0L": 158.44159611840192,
+    "Insert/Rail0R": 158.75951072992635,
+    "Insert/Rail1L": 401.64159611840194,
+    "Insert/Rail1R": 401.7671148802454,
+    "Insert/VolumeA": 163.44159611840192,
+    "Insert/VolumeB": 406.64159611840194,
+    "Nose/Insert": 644.8415961184019,
+    "Nose/Panel0": 336.8471110375774,
+    "Nose/Panel1": 336.3658368716449,
+    "Nose/Panel2": 336.3658368716449,
+    "Nose/Panel3": 336.3658368716449,
+    "Nose/Ring": 664.2068976002535,
+    "Panel0/Collar": 117.01083712018489,
+    "Panel0/Insert": 140.35877828160523,
+    "Panel0/Panel1": 118.99902027441115,
+    "Panel0/Panel2": 215.99999999999997,
+    "Panel0/Panel3": 118.99902027441118,
+    "Panel0/Pod1": 117.96432869947378,
+    "Panel0/Pod2": 196.0,
+    "Panel0/Pod3": 117.96432869942036,
+    "Panel0/Rail0L": 154.0,
+    "Panel0/Rail0R": 52.999999999999986,
+    "Panel0/Rail1L": 180.40800554792077,
+    "Panel0/Rail1R": 107.88905628365933,
+    "Panel0/Ring": 149.53266872602367,
+    "Panel0/VolumeA": 66.99999999999999,
+    "Panel0/VolumeB": 118.85087937710178,
+    "Panel1/Collar": 115.6180608882818,
+    "Panel1/Insert": 133.99631525370458,
+    "Panel1/Panel2": 118.99902027441117,
+    "Panel1/Panel3": 215.99999999999997,
+    "Panel1/Pod2": 117.96432869947381,
+    "Panel1/Pod3": 196.0,
+    "Panel1/Rail0L": 129.9015075105123,
+    "Panel1/Rail0R": 129.90150751049552,
+    "Panel1/Rail1L": 161.27801848126526,
+    "Panel1/Rail1R": 161.27801848123872,
+    "Panel1/Ring": 149.47973010576493,
+    "Panel1/VolumeA": 76.99999999999999,
+    "Panel1/VolumeB": 119.41746743550709,
+    "Panel2/Collar": 115.6180608882818,
+    "Panel2/Insert": 127.16282897579985,
+    "Panel2/Panel3": 118.99902027441115,
+    "Panel2/Pod3": 117.9643286994738,
+    "Panel2/Rail0L": 52.999999999999986,
+    "Panel2/Rail0R": 154.0,
+    "Panel2/Rail1L": 107.88905628367452,
+    "Panel2/Rail1R": 180.40800554792986,
+    "Panel2/Ring": 149.53266872602367,
+    "Panel2/VolumeA": 66.99999999999999,
+    "Panel2/VolumeB": 118.85087937710178,
+    "Panel3/Collar": 115.6180608882818,
+    "Panel3/Insert": 133.9963152537046,
+    "Panel3/Rail0L": 79.1606067024459,
+    "Panel3/Rail0R": 79.16060670247342,
+    "Panel3/Rail1L": 124.107208675543,
+    "Panel3/Rail1R": 124.1072086755775,
+    "Panel3/Ring": 149.47973010576493,
+    "Panel3/VolumeA": 83.99999999999999,
+    "Panel3/VolumeB": 129.1995802187855,
+    "Pod0/Insert": 180.5064897093742,
+    "Pod0/Panel0": 5.0,
+    "Pod0/Panel1": 117.96432869942035,
+    "Pod0/Panel2": 196.0,
+    "Pod0/Panel3": 117.96432869947382,
+    "Pod0/Ring": 195.0192079901729,
+    "Pod1/Insert": 177.11892044989315,
+    "Pod1/Panel1": 5.0,
+    "Pod1/Panel2": 117.96432869942036,
+    "Pod1/Panel3": 196.0,
+    "Pod1/Ring": 194.99395873335897,
+    "Pod2/Insert": 174.08164805218092,
+    "Pod2/Panel2": 5.0,
+    "Pod2/Panel3": 117.96432869942036,
+    "Pod2/Ring": 195.0192079901729,
+    "Pod3/Insert": 177.11892044989318,
+    "Pod3/Panel3": 4.999999999999986,
+    "Pod3/Ring": 194.99395873335897,
+    "Ring/Insert": 15.0,
+    "Ring/Rail0L": 177.80689760025348,
+    "Ring/Rail0R": 177.80689760025348,
+    "Ring/Rail1L": 421.00689760025347,
+    "Ring/Rail1R": 421.00689760025347,
+    "Ring/VolumeA": 182.80689760025348,
+    "Ring/VolumeB": 426.00689760025347,
+    "Shell/Insert": 10.87058527677462,
+    "Shell/Panel0": 17.999999999999986,
+    "Shell/Panel1": 17.999999999999986,
+    "Shell/Panel2": 17.999999999999986,
+    "Shell/Panel3": 17.999999999999986,
+    "Shell/Ring": 24.20689760025347
+  },
+  "minimum_moving_gap_mm": 4.999999999999986,
+  "parameter_regression": {
+    "changed_parts": {
+      "Nose": {
+        "after_max_z_mm": 866.0000001000001,
+        "after_volume_mm3": 398108.5337310508,
+        "before_max_z_mm": 854.0000001,
+        "before_volume_mm3": 380302.6154775056
+      }
+    },
+    "exchange": {
+      "closed_visual_meshes": 17,
+      "step_round_trip_by_part": {
+        "Collar": {
+          "bounds_delta_mm": 3.0453861654677894e-11,
+          "relative_volume_delta": 0.0014542467685989369
+        },
+        "Insert": {
+          "bounds_delta_mm": 1.879385536085465e-12,
+          "relative_volume_delta": 1.0966350622924473e-13
+        },
+        "Nose": {
+          "bounds_delta_mm": 3.0453861654677894e-11,
+          "relative_volume_delta": 0.007169103255779926
+        },
+        "Panel0": {
+          "bounds_delta_mm": 5.059064278611913e-12,
+          "relative_volume_delta": 8.704028068006858e-14
+        },
+        "Panel1": {
+          "bounds_delta_mm": 5.059064278611913e-12,
+          "relative_volume_delta": 9.683951757782465e-14
+        },
+        "Panel2": {
+          "bounds_delta_mm": 5.059064278611913e-12,
+          "relative_volume_delta": 7.555499861019859e-13
+        },
+        "Panel3": {
+          "bounds_delta_mm": 5.059064278611913e-12,
+          "relative_volume_delta": 7.56126411801854e-13
+        },
+        "Pod0": {
+          "bounds_delta_mm": 0.0,
+          "relative_volume_delta": 0.0
+        },
+        "Pod1": {
+          "bounds_delta_mm": 1.9539925233402755e-14,
+          "relative_volume_delta": 0.0
+        },
+        "Pod2": {
+          "bounds_delta_mm": 1.0658141036401503e-14,
+          "relative_volume_delta": 0.0
+        },
+        "Pod3": {
+          "bounds_delta_mm": 1.9539925233402755e-14,
+          "relative_volume_delta": 0.0
+        },
+        "Rail0L": {
+          "bounds_delta_mm": 0.0,
+          "relative_volume_delta": 0.0
+        },
+        "Rail0R": {
+          "bounds_delta_mm": 0.0,
+          "relative_volume_delta": 0.0
+        },
+        "Rail1L": {
+          "bounds_delta_mm": 0.0,
+          "relative_volume_delta": 4.281990121341471e-16
+        },
+        "Rail1R": {
+          "bounds_delta_mm": 0.0,
+          "relative_volume_delta": 4.281990121341471e-16
+        },
+        "Ring": {
+          "bounds_delta_mm": 0.0,
+          "relative_volume_delta": 4.3665332580105793e-16
+        },
+        "Shell": {
+          "bounds_delta_mm": 0.0,
+          "relative_volume_delta": 1.3159143409368283e-15
+        }
+      },
+      "step_solids": 17
+    },
+    "geometry_pass": true,
+    "minimum_moving_gap_mm": 4.999999999999986,
+    "override": {
+      "NoseLength": "226 mm"
+    },
+    "pass": true
+  },
+  "pass": true,
+  "physical_solids": 17,
+  "poses": [
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        -12,
+        -12
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        -12,
+        -6
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        -12,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        -12,
+        6
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        -12,
+        12
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        -6,
+        -12
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        -6,
+        -6
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        -6,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        -6,
+        6
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        -6,
+        12
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -12
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -6
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        6
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        12
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        -12
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        -6
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        6
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        12
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        12,
+        -12
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        12,
+        -6
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        12,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        12,
+        6
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        0,
+        12,
+        12
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        -12,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        -6,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        6,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        12,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        -12,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        -6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        12,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        -12,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        -6,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        6,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        12,
+        0,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        -12,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        -6,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        6,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        0,
+        0,
+        0,
+        12,
+        0,
+        0
+      ],
+      "minimum_moving_gap_mm": 4.999999999999986
+    },
+    {
+      "angles_deg": [
+        12,
+        -12,
+        12,
+        -12,
+        12,
+        -12
+      ],
+      "minimum_moving_gap_mm": 5.0
+    },
+    {
+      "angles_deg": [
+        -12,
+        12,
+        -12,
+        12,
+        -12,
+        12
+      ],
+      "minimum_moving_gap_mm": 4.999999999999986
+    }
+  ],
+  "seams": {
+    "nose": {
+      "gap_mm": 0.0,
+      "near_seam_radius_step_mm": 9.826186442296603e-08,
+      "near_seam_slope_delta": 2.9478556484718865e-05
+    },
+    "tail": {
+      "gap_mm": 0.0,
+      "near_seam_radius_step_mm": 8.680555652063049e-07,
+      "near_seam_slope_delta": 0.0002604166724040624
+    }
+  },
+  "static_neutral_gap_by_pair_mm": {
+    "Collar/Rail0L": 153.5999999999781,
+    "Collar/Rail0R": 153.5999999999781,
+    "Collar/Rail1L": 396.7999999999781,
+    "Collar/Rail1R": 396.7999999999781,
+    "Collar/VolumeA": 158.5999999999781,
+    "Collar/VolumeB": 401.7999999999781,
+    "Nose/Collar": 639.9999999999782,
+    "Nose/Pod0": 422.0,
+    "Nose/Pod1": 422.0,
+    "Nose/Pod2": 422.0,
+    "Nose/Pod3": 422.0,
+    "Nose/Rail0L": 368.4,
+    "Nose/Rail0R": 368.4,
+    "Nose/Rail1L": 125.20000000000005,
+    "Nose/Rail1R": 125.20000000000005,
+    "Nose/VolumeA": 373.4,
+    "Nose/VolumeB": 130.2,
+    "Pod0/Collar": 167.99999999997812,
+    "Pod0/Pod1": 111.72287142747449,
+    "Pod0/Pod2": 176.0,
+    "Pod0/Pod3": 111.72287142747452,
+    "Pod0/Rail0L": 134.45073447177595,
+    "Pod0/Rail0R": 34.785054261852174,
+    "Pod0/Rail1L": 223.71061664570146,
+    "Pod0/Rail1R": 182.15224401582321,
+    "Pod0/VolumeA": 47.0,
+    "Pod0/VolumeB": 189.71410068837795,
+    "Pod1/Collar": 167.99999999997812,
+    "Pod1/Pod2": 111.72287142747452,
+    "Pod1/Pod3": 176.0,
+    "Pod1/Rail0L": 114.16216536138407,
+    "Pod1/Rail0R": 114.16216536138406,
+    "Pod1/Rail1L": 212.1377854131602,
+    "Pod1/Rail1R": 212.1377854131602,
+    "Pod1/VolumeA": 57.0,
+    "Pod1/VolumeB": 189.96431243788925,
+    "Pod2/Collar": 167.99999999997812,
+    "Pod2/Pod3": 111.7228714274745,
+    "Pod2/Rail0L": 34.785054261852174,
+    "Pod2/Rail0R": 134.45073447177595,
+    "Pod2/Rail1L": 182.15224401582321,
+    "Pod2/Rail1R": 223.71061664570146,
+    "Pod2/VolumeA": 47.0,
+    "Pod2/VolumeB": 189.71410068837795,
+    "Pod3/Collar": 167.99999999997812,
+    "Pod3/Rail0L": 67.11929677819933,
+    "Pod3/Rail0R": 67.11929677819936,
+    "Pod3/Rail1L": 190.98282645306097,
+    "Pod3/Rail1R": 190.98282645306097,
+    "Pod3/VolumeA": 64.0,
+    "Pod3/VolumeB": 194.62384232154088,
+    "Rail0L/Rail0R": 92.0,
+    "Rail0L/Rail1L": 125.19999999999999,
+    "Rail0L/Rail1R": 155.36743545543897,
+    "Rail0L/VolumeA": 5.0,
+    "Rail0L/VolumeB": 130.29597077423384,
+    "Rail0R/Rail1L": 155.36743545543897,
+    "Rail0R/Rail1R": 125.19999999999999,
+    "Rail0R/VolumeA": 5.0,
+    "Rail0R/VolumeB": 130.29597077423384,
+    "Rail1L/Rail1R": 92.0,
+    "Rail1L/VolumeA": 130.29597077423384,
+    "Rail1L/VolumeB": 5.0,
+    "Rail1R/VolumeA": 130.29597077423384,
+    "Rail1R/VolumeB": 5.0,
+    "Shell/Collar": 0.0,
+    "Shell/Nose": 0.0,
+    "Shell/Rail0L": 22.36824692026786,
+    "Shell/Rail0R": 22.36824692026787,
+    "Shell/Rail1L": 22.36824692026786,
+    "Shell/Rail1R": 22.36824692026787,
+    "Shell/VolumeA": 34.599610896414404,
+    "Shell/VolumeB": 28.719986033521252,
+    "VolumeA/VolumeB": 135.2
+  },
+  "unexpected_interference_or_contact": [],
+  "valid_single_solids": 19
+}

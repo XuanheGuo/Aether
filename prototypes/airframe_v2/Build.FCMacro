@@ -1,0 +1,13 @@
+"""Run with FreeCAD on Apple Silicon macOS or another desktop platform."""
+import os
+import sys
+from datetime import datetime
+from pathlib import Path
+
+source = Path(__file__).resolve().parent
+sys.path.insert(0, str(source))
+from run import run
+
+output = os.environ.get("AETHER_V2_OUTPUT")
+destination = Path(output) if output else source / f"generated-{datetime.now():%Y%m%d-%H%M%S}"
+run(destination)
