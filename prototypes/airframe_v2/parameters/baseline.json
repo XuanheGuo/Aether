@@ -1,0 +1,18 @@
+{
+  "ShellRadius": "90 mm",
+  "ShellLength": "640 mm",
+  "Wall": "4 mm",
+  "NoseLength": "214 mm",
+  "CollarLength": "72 mm",
+  "CollarBore": "69 mm",
+  "PanelStation": "193 mm",
+  "PanelStandOff": "15 mm",
+  "PanelSpan": "52 mm",
+  "PanelRootChord": "114 mm",
+  "PanelThickness": "8 mm",
+  "TailStation": "=-42 mm",
+  "RingRadius": "55 mm",
+  "RingWidth": "8 mm",
+  "RingDepth": "13 mm",
+  "InsertRadius": "32 mm"
+}
